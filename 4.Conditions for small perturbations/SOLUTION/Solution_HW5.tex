@@ -1,0 +1,230 @@
+\documentclass[letter,12pt]{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+\input{newcommands}
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+% - tenseur d'ordre 4
+\newcommand{\TTTT}[1]{\underline{\underline{\underline{\underline{#1}}}}}
+% - tenseur d'ordre 2
+\newcommand{\TT}[1]{\underline{\underline{#1}}}
+% - tenseur d'ordre 1
+\newcommand{\T}[1]{\underline{#1}}
+
+% - composante i - j de la contrainte: 
+\newcommand{\sigi}[1]{\sigma_{#1}}
+% - composante i - j de la deformation: 
+\newcommand{\epsi}[1]{\varepsilon_{#1}}
+
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{\textbf{Conditions for small perturbations}}
+\date{}
+
+\maketitle
+
+\vspace{-1cm}
+
+We consider the transformation  $\T{x}=\T{\Phi}(\T{X},t)$ defined by: 
+\begin{eqnarray}
+	x_1 & = & X_1+X_2 \\ 
+	x_2 & = & X_2 \\ 
+	x_3 & = & X_3 
+\end{eqnarray}
+
+
+
+	\noindent \textbf{Question 1:} Make a graphical representation of the reference configuration and of the deformed configuration. Calculate the gradient of the transformation, $\TT{F}$. \\
+	
+	\noindent \textbf{Question 2:} Is this an homogenous transformation? It is acceptable from a physical point of view? \\
+	
+	\noindent \textbf{Question 3:} Calculate the expansion of the following vectors: $\T{e}_1$, $\T{e}_2$ and $\frac{\T{e}_1+\T{e}_2}{\sqrt{2}}$ \\
+	
+	\noindent \textbf{Question 4:} Calculate $\TT{e}$ and $\TT{\varepsilon}$? Can we consider we are in small perturbations? \\
+	
+	\noindent \textbf{Question 5:} Consider the transformation $x_1=X_1+\alpha \cdot X_2$, $x_2=X_2$ and $x_3=X_3$. What is the condition for having small perturbations?
+
+
+\newpage
+\section*{Solution to "Conditions for small pertubations"} 
+
+	\noindent \textbf{Question 1:} Make a graphical representation of the reference configuration and of the deformed configuration. Calculate the gradient of the transformation, $\TT{F}$. \\
+	
+	\textbf{Answer:} The gradient of the transformation $\TT{F}$ also known as deformation gradient can be calculated as follows.
+	
+	\begin{equation}
+      \TT{F} = \derp{\xu}{\Xu} = \derp{\phiu}{\Xu} = \left( \begin{matrix}
+      \derp{x_1}{X_1}  & \derp{x_1}{X_2} & \derp{x_1}{X_3} \\
+      \derp{x_2}{X_1} & \derp{x_2}{X_2} & \derp{x_2}{X_3} \\
+      \derp{x_3}{X_1} & \derp{x_3}{X_2} & \derp{x_3}{X_3} 
+      \end{matrix} \right)=
+      \left(
+      \begin{matrix}
+      1 & 1 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+      \end{matrix}
+      \right)
+	\end{equation} \\
+	
+	\noindent \textbf{Question 2:} Is this an homogenous transformation? It is acceptable from a physical point of view? \\
+	
+	\textbf{Answer:} This is a homogeneous transformation since $\TT{F}$ does not depend on $\Xu$ which means $\TT{F}$ is a constant everywhere (homogeneous field). The determinant of deformation gradient $\TT{F}$ has a physical significance i.e. the ratio between the volume after deformation to initial volume as shown below
+	\begin{equation}
+	|\Omega| = J \quad |\Omega_0|
+	\end{equation}
+	where 
+	\begin{equation}
+	J = det \TT{F}
+	\end{equation}
+	In this particular case, $det F = 1$ which means that there is no volume change (no volume variation). And yes, it is acceptable from a physical point of view to have a constant volume. The transformation is not physically accepted if the $det F \leq 0$. \\
+
+	\noindent \textbf{Question 3:} Calculate the expansion of the following vectors: $\Vu_1 =  \T{e}_1$, $ \Vu_2 = \T{e}_2$ and $\Vu_3 =  \frac{\T{e}_1+\T{e}_2}{\sqrt{2}}$ \\
+	
+	\textbf{Answer:} Let say $\vu$ is the vector after transformation and $\Vu$ is undeformed vector. By definition,
+	\begin{equation}
+	\vu \cdot \vu = \Vu \cdot \Cuu \cdot \Vu \quad \forall \Vu \rightarrow \vu
+	\end{equation}
+	Then the expansion can be calculated as follow:
+	\begin{equation}
+	\frac{|\vu|}{|\Vu|} = \frac{\sqrt{\Vu \cdot \Cuu \cdot \Vu}}{\sqrt{\Vu \cdot \Vu}} = \lambda_{\Vu}
+	\end{equation}
+	with
+	\begin{equation}
+	\Cuu = \Fuu^T \Fuu = \left( \begin{matrix}
+	1 & 1 & 0 \\
+	1 & 2 & 0 \\
+	0 & 0 & 1
+	\end{matrix} \right)
+	\end{equation}
+	
+	For $\Vu_1 = \eu_1$, then $\lambda_{\Vu_1} = \sqrt{\frac{\eu_1 \cdot \Cuu \eu_1}{\eu_1 \cdot \eu_1}} = 1 \rightarrow $ No length change. \\
+	
+	For $\Vu_2 = \eu_2$, then $\lambda_{\Vu_2} = \sqrt{\frac{\eu_2 \cdot \Cuu \eu_2}{\eu_2 \cdot \eu_2}} = \sqrt{2} \rightarrow $ The length changes $\sqrt{2}$ times the initial length. \\
+	
+	For $\Vu_3 = \frac{\T{e}_1+\T{e}_2}{\sqrt{2}}$, then $\lambda_{\Vu_3} = \sqrt{\frac{\eu_3 \cdot \Cuu \eu_3}{\eu_3 \cdot \eu_3}} = \sqrt{\frac{5}{2}} \rightarrow $ The length changes $\sqrt{\frac{5}{2}}$ times the initial length. \\
+	
+	\noindent \textbf{Question 4:} Calculate $\TT{e}$ and $\TT{\varepsilon}$? Can we consider we are in small perturbations? \\
+	
+	\textbf{Answer:} The Green-Lagrange strain tensor can be calculated as follows
+	\begin{equation}
+	  \TT{e} = \frac{1}{2} \{\TT{C} - \TT{1}\} = \frac{1}{2} (\TT{F}^T \TT{F} - \TT{1}) = \frac{1}{2}  \left( \left( \begin{matrix}
+	  1 & 1 & 0 \\
+	  1 & 2 & 0 \\
+	  0 & 0 & 1
+	  \end{matrix} \right)  - \left( \begin{matrix}
+	  1 & 0 & 0 \\
+	  0 & 1 & 0 \\
+	  0 & 0 & 1
+	  \end{matrix} \right) \right) 
+	  =  
+	  \frac{1}{2} \left( \begin{matrix}
+	  0 & 1 & 0 \\
+	  1 & 1 & 0 \\
+	  0 & 0 & 0
+	  \end{matrix} \right)
+	\end{equation} \\
+	The linearized strain $\TT{\varepsilon}$ can be calculated as follows
+	\begin{equation}
+	\epsuu = \frac{1}{2} (\Graduu \xiu + \Graduu^T \xiu)
+	\end{equation}
+	where $\xiu$ the displacement vector that can be calculated as follows
+	\begin{equation}
+	\xu = \Xu + \xiu
+	\end{equation}
+	\begin{equation}
+	\xiu = \xu - \Xu = \left( \begin{matrix}
+	X_2 \\
+	0 \\
+	0
+	\end{matrix} \right)
+	\end{equation}
+	\begin{equation}
+	\Graduu \xiu = \derp{\xi_i}{X_j} = \left(  \begin{matrix}
+	0 & 1 & 0 \\ 
+	0 & 0 & 0 \\
+	0 & 0 & 0
+	\end{matrix}\right)
+	\end{equation}
+	Finally, 
+		\begin{equation}
+	\epsuu = \frac{1}{2} (\Graduu \xiu + \Graduu^T \xiu) = \frac{1}{2} \left( \begin{matrix}
+	0 & 1 & 0 \\
+	1 & 0 & 0 \\
+	0 & 0 & 0
+	\end{matrix}\right)
+	\end{equation}
+	By comparing $\epsuu$ and $\euu$, since  $\epsuu \ne \euu$, then this is not a small perturbation case. \\
+	
+	\noindent \textbf{Question 5:} Consider the transformation $x_1=X_1+\alpha \cdot X_2$, $x_2=X_2$ and $x_3=X_3$. What is the condition for having small perturbations? \\
+	
+	\textbf{Answer:} Note that the transformation above has the same pattern as previous transformation. The only difference is that now $x_1 = X_1 + \alpha X_2$ instead of $x_1 = X_1 + X_2$. Therefore, we can the displacement vector $\xiu$ as below
+	\begin{equation}
+	\xiu = \left( \begin{matrix}
+	\alpha X_2 \\ 0 \\ 0
+	\end{matrix} \right)
+	\end{equation}
+	and 
+	\begin{equation}
+	\Graduu \xiu = \left( \begin{matrix}
+	0 & \alpha & 0 \\
+	0 & 0 & 0 \\
+	0 & 0 & 0
+	\end{matrix} \right)
+	\end{equation}
+	Then to be small perturbation, we should have $||\Graduu \xiu || = \sqrt{\alpha^2} << 1$. In this situation,
+	\begin{equation}
+	\euu = \frac{1}{2}(\Graduu \xiu + \Graduu^T \xiu) + \frac{1}{2} \Graduu^T \Graduu \xiu
+	\end{equation}
+	where the first term is small strain term and the second term is second order.
+	\begin{equation}
+	\euu = \frac{1}{2} \left( \begin{matrix}
+	0 & \alpha & 0 \\
+	\alpha & 0 & 0 \\
+	0 & 0 & 0
+	\end{matrix}\right) + \frac{1}{2} \left(
+	\begin{matrix}
+	0 & 0 & 0 \\
+	0 & \alpha^2 & 0 \\
+	0 & 0 & 0
+	\end{matrix} \right)
+	\end{equation}
+	
+ 
+
+\end{document}

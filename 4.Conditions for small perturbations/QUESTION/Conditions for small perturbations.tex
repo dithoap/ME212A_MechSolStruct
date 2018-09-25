@@ -1,0 +1,110 @@
+\documentclass[letter,12pt]{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+% - tenseur d'ordre 4
+\newcommand{\TTTT}[1]{\underline{\underline{\underline{\underline{#1}}}}}
+% - tenseur d'ordre 2
+\newcommand{\TT}[1]{\underline{\underline{#1}}}
+% - tenseur d'ordre 1
+\newcommand{\T}[1]{\underline{#1}}
+
+% - composante i - j de la contrainte: 
+\newcommand{\sigi}[1]{\sigma_{#1}}
+% - composante i - j de la deformation: 
+\newcommand{\epsi}[1]{\varepsilon_{#1}}
+
+% - tenseur de contrainte : 
+\newcommand{\sig}{\TT{\sigma}}
+\newcommand{\eps}{\TT{\varepsilon}}
+\newcommand{\C}{\TTTT{C}}
+\renewcommand{\S}{\TTTT{S}}
+
+% - composantes des tenseurs de Hooke: 
+\newcommand{\Ci}[1]{C_{#1}}
+\newcommand{\Si}[1]{S_{#1}}
+
+% - notations pour un vecteur
+\renewcommand{\Vec}[1]{\underline{#1}}
+
+
+% - notations pour un vecteur chapeau
+\newcommand{\Vecc}[1]{\hat{\underline{#1}}}
+
+% - notations pour un produit tensoriel
+\newcommand{\tens}[2]{#1 \otimes #2}
+
+% - notations pour les vecteurs de base
+\newcommand{\e}[1]{\Vec{e_{#1}}}
+
+% - contrainte equivalente pour les critères de plasticite
+\newcommand{\se}{\sigma_{eq}}
+
+% - deformation elastique
+\newcommand{\epse}{\TT{\varepsilon_e}}
+
+% - deformation elastique
+\newcommand{\epsp}{\TT{\varepsilon_p}}
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{\textbf{Conditions for small perturbations}}
+\date{}
+
+\maketitle
+
+\vspace{-1cm}
+
+
+We consider the transformation  $\T{x}=\T{\Phi}(\T{X},t)$ defined by: 
+\begin{eqnarray}
+x_1 & = & X_1+X_2 \\ 
+x_2 & = & X_2 \\ 
+x_3 & = & X_3 
+\end{eqnarray}
+
+\begin{description}
+\item \textbf{Question:} Make a graphical representation of the reference configuration and of the deformed configuration. Calculate the gradient of the transformation, $\TT{F}$.
+\item \textbf{Question:} Is this an homogenous transformation? It is acceptable from a physical point of view?
+\item \textbf{Question:} Calculate the expansion of the following vectors: $\T{e}_1$, $\T{e}_2$ and $\frac{\T{e}_1+\T{e}_2}{\sqrt{2}}$
+\item \textbf{Question:} Calculate $\TT{e}$ and $\TT{\varepsilon}$? Can we consider we are in small perturbations?
+\item \textbf{Question:} Consider the transformation $x_1=X_1+\alpha \cdot X_2$, $x_2=X_2$ and $x_3=X_3$. What is the condition for having small perturbations?
+\end{description}
+
+\end{document}
