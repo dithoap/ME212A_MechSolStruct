@@ -1,0 +1,167 @@
+\documentclass[letter,12pt]{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+\input{newcommands}
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+% - tenseur d'ordre 4
+\newcommand{\TTTT}[1]{\underline{\underline{\underline{\underline{#1}}}}}
+% - tenseur d'ordre 2
+\newcommand{\TT}[1]{\underline{\underline{#1}}}
+% - tenseur d'ordre 1
+\newcommand{\T}[1]{\underline{#1}}
+
+% - composante i - j de la contrainte: 
+\newcommand{\sigi}[1]{\sigma_{#1}}
+% - composante i - j de la deformation: 
+\newcommand{\epsi}[1]{\varepsilon_{#1}}
+
+% - tenseur de contrainte : 
+\newcommand{\sig}{\TT{\sigma}}
+\newcommand{\C}{\TTTT{C}}
+\renewcommand{\S}{\TTTT{S}}
+
+% - composantes des tenseurs de Hooke: 
+\newcommand{\Ci}[1]{C_{#1}}
+\newcommand{\Si}[1]{S_{#1}}
+
+% - notations pour un vecteur
+\renewcommand{\Vec}[1]{\underline{#1}}
+
+
+% - notations pour un vecteur chapeau
+\newcommand{\Vecc}[1]{\hat{\underline{#1}}}
+
+% - notations pour un produit tensoriel
+\newcommand{\tens}[2]{#1 \otimes #2}
+
+% - notations pour les vecteurs de base
+\newcommand{\e}[1]{\Vec{e_{#1}}}
+
+% - contrainte equivalente pour les critères de plasticite
+\newcommand{\se}{\sigma_{eq}}
+
+% - deformation elastique
+\newcommand{\epse}{\TT{\varepsilon_e}}
+
+% - deformation elastique
+\newcommand{\epsp}{\TT{\varepsilon_p}}
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{\textbf{Maximum shear stress}}
+\date{}
+
+\maketitle
+
+\vspace{-1cm}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{figures/exo2_traction}
+	\caption{Dogbone sample under uniaxial tensile load}
+	\label{fig:uniaxial}
+\end{figure}
+\vspace{0.5cm}
+
+We assume that during a tensile test (Fig. \ref{fig:uniaxial}), the stress state is homogeneous within the part $\Omega$ of a material sample. For any material point of $\Omega$, the local stress tensor is:
+
+
+\begin{equation}
+\sigmauu = 100 \cdot \eu_1 \otimes \eu_1 
+\end{equation}
+
+\begin{description}
+	\item{\textbf{Question 1}} Calculate the global force $\Vec{F}$ that is applied on the material sample by the experimental tensile device.
+	\item{\textbf{Question 2}} We cut the sample by a ``fictive" plane. The orientation of this plane is denoted by the angle $\theta$ between the $\Vec{e}_2$ axis and the unit normal vector $\Vec{n}$. Calculate as a function of $\theta$ the stress vector applied on this surface.
+	\item{\textbf{Question 3}} Find the value of $\theta$ for which the shear stress is maximum. 
+\end{description}
+
+\newpage
+\section*{Solution to "Maximum shear stress"} 
+
+
+	\noindent \textbf{Question 1} Calculate the global force $\Vec{F}$ that is applied on the material sample by the experimental tensile device. \\
+	
+	\textbf{Answer:} By definition the elementary force applied on the surface is
+	\begin{equation}
+	d\Fu = (\sigmauu \cdot \T{n} )dS
+	\end{equation}
+	where
+	\begin{equation}
+	\Fu = \int_S \sigmauu \cdot \T{n} dS = \int_S \sigma_{11} \eu_1 dS = S\sigma_{11} \eu_1
+	\end{equation}
+
+	Since $S = 10$ mm$^2$ and $\sigma_{11} = 100$ MPa, then $\Fu = 1000 $ (Newton) $ \eu_1$  \\
+	
+	
+	\noindent \textbf{Question 2} We cut the sample by a ``fictive" plane. The orientation of this plane is denoted by the angle $\theta$ between the $\Vec{e}_2$ axis and the unit normal vector $\Vec{n}$. Calculate as a function of $\theta$ the stress vector applied on this surface. \\
+	
+	The normal direction of the fictive plane can be related as follows:
+	\begin{equation}
+	\T{n} = \sin \theta \eu_1 + \cos \theta \eu_2
+	\end{equation}
+	The stress vector at point M along the fictive plane is given by
+	\begin{equation}
+	\sigmauu \cdot \T{n} = \sigma_{11} \eu_1 \otimes \eu_1 \cdot (\sin \theta \eu_1 + \cos \theta \eu_2)
+	\end{equation}
+	\begin{equation}
+	\sigmauu \cdot \T{n} = \sigma_{11} \sin \theta \eu_1
+	\end{equation}
+	If we transform the global orientation to the local orientation according to the fictive plane, then
+	\begin{equation}
+	\eu_1 = \sin \theta \T{n} + \cos\theta \tu
+	\end{equation}
+	and therefore,
+	\begin{equation}
+	\sigmauu \cdot \T{n} = \sigma_{11} \sin^2 \theta \T{n} + \sigma_{11} \sin \theta \cos \theta \tu
+	\end{equation}
+	where the first term is the normal component of the stress vector and the second term is the shear component  of the stress vector. \\
+	
+	\noindent \textbf{Question 3} Find the value of $\theta$ for which the shear stress is maximum.
+	\begin{equation}
+	\derp{(\sinteta\costeta)}{\theta} = \cos^2\theta - \sin^2\theta = 0 \rightarrow \theta = 45^\circ
+	\end{equation}
+
+	 
+
+
+
+ 
+
+\end{document}
