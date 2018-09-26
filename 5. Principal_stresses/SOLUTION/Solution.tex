@@ -1,0 +1,91 @@
+\documentclass[letter,12pt]{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+\input{newcommands}
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{\textbf{Principal Stress}}
+\date{}
+
+\maketitle
+
+\vspace{-1cm}
+
+
+The stress state for a material point is given in a Cartesian basis $(\eu_1,\eu_2,\eu_3)$ by:
+
+\begin{equation}
+\sigmauu = 
+\begin{bmatrix}
+2  & 10 & 0  \\
+10 & 0  & 8  \\
+0  & 8  & 0
+\end{bmatrix}
+\end{equation}
+
+\noindent \textbf{Question} Calculate the principal stresses and the principal directions for this stress tensor. \\
+
+\textbf{Answer:} The principal stresses are the Eigen values of the stress tensor.
+\begin{equation}
+\det (\sigmauu - \lambda \underline{\underline{1}}) = 0 \rightarrow \left|  \begin{matrix}
+2 - \lambda & 10 & 0 \\
+10  & -\lambda & 8 \\
+0 & 8 & -\lambda
+\end{matrix}\right| = 0
+\end{equation}
+Then,
+\begin{equation}
+\det (\sigmauu - \lambda \underline{\underline{1}}) = (2-\lambda)(\lambda^2 - 64)+100\lambda = -\lambda^3 + 2\lambda^2 +164 \lambda -128 = 0
+\end{equation}
+The equation above also know as the characteristic equation. By solving the polynomial order 3 above, we found that the Eigenvalues are: $\lambda_1 = -12.246$ MPa,$ \lambda_2 = 0.776$ MPa,$\lambda_3 = 13.470$ MPa. \\
+
+The principal directions are the Eigenvectors of the stress tensor. Note that $\Pu_I$ is associated with $\lambda_I$ if $\sigmauu \cdot \Pu_I = \lambda_I \Pu_I$. So $\Pu_I$ is a solution of $(\sigmauu - \lambda \underline{\underline{1}}) \Pu_I = 0 $. By convention, we usually always normalize $\Pu_I$ as a unit vector so $||\Pu_I||=1$
+
+
+
+
+
+	 
+
+
+
+ 
+
+\end{document}
