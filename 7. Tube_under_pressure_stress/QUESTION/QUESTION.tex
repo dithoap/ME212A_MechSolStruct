@@ -1,0 +1,66 @@
+\documentclass[letter,12pt]{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+\input{newcommands}
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{\textbf{Practice: \\ Tube under internal pressure}}
+\date{}
+
+\maketitle
+
+\vspace{-1cm}
+
+
+Let us consider a circular tube with height $h$, and internal radius $r$, and thickness $e$. The tube is imposed to internal pressure $p$ (see Fig. \ref{fig:replacewithrealfigure}). Note that gravity and atmospheric pressure are neglected.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\linewidth]{figures/replacewithrealfigure}
+	\caption{Circular tube under internal pressure}
+	\label{fig:replacewithrealfigure}
+\end{figure}
+
+
+
+\noindent \textbf{Question 1:} Please verify that a static solution exist! Assume that $\sigmauu$ only depends on $r$ (the polar radius)\\
+
+\noindent \textbf{Question 2:} Find all the local equations satisfied by $\sigmauu(r)$ that define the static admissibility? Prove that $\sigmart = 0$ with the assumption $\sigmauu(r)$?
+\end{document}
