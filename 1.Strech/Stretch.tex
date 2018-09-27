@@ -1,0 +1,128 @@
+\documentclass[letter,12pt]{article}
+
+\usepackage{subfig}
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+% - tenseur d'ordre 4
+\newcommand{\TTTT}[1]{\underline{\underline{\underline{\underline{#1}}}}}
+% - tenseur d'ordre 2
+\newcommand{\TT}[1]{\underline{\underline{#1}}}
+% - tenseur d'ordre 1
+\newcommand{\T}[1]{\underline{#1}}
+
+% - composante i - j de la contrainte: 
+\newcommand{\sigi}[1]{\sigma_{#1}}
+% - composante i - j de la deformation: 
+\newcommand{\epsi}[1]{\varepsilon_{#1}}
+
+% - tenseur de contrainte : 
+\newcommand{\sig}{\TT{\sigma}}
+\newcommand{\eps}{\TT{\varepsilon}}
+\newcommand{\C}{\TTTT{C}}
+\renewcommand{\S}{\TTTT{S}}
+
+% - composantes des tenseurs de Hooke: 
+\newcommand{\Ci}[1]{C_{#1}}
+\newcommand{\Si}[1]{S_{#1}}
+
+% - notations pour un vecteur
+\renewcommand{\Vec}[1]{\underline{#1}}
+
+
+% - notations pour un vecteur chapeau
+\newcommand{\Vecc}[1]{\hat{\underline{#1}}}
+
+% - notations pour un produit tensoriel
+\newcommand{\tens}[2]{#1 \otimes #2}
+
+% - notations pour les vecteurs de base
+\newcommand{\e}[1]{\Vec{e_{#1}}}
+
+% - contrainte equivalente pour les critères de plasticite
+\newcommand{\se}{\sigma_{eq}}
+
+% - deformation elastique
+\newcommand{\epse}{\TT{\varepsilon_e}}
+
+% - deformation elastique
+\newcommand{\epsp}{\TT{\varepsilon_p}}
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{ME 211A: Stretch}
+
+\maketitle
+
+\vspace{-1cm}
+
+
+\section*{3.70 Question}
+
+Given the following right Cauchy-Green deformation tensor at a point
+
+\begin{equation}
+\left[ C \right]=\left[ \begin{matrix}
+9 & 0 & 0  \\
+0 & 4 & 0  \\
+0 & 0 & 0.36  \\
+\end{matrix} \right]
+\end{equation}
+
+\begin{description}
+	
+\item \textbf{(a)} Find the stretch for the material elements that were in the direction of $\textbf{e}_1$, $\textbf{e}_2$ and $\textbf{e}_3$.
+\item \textbf{(b)} Find the stretch for the material element that was in the direction of $\textbf{e}_1 + \textbf{e}_2$.
+\item \textbf{(c)} Find $\cos\theta$, where $\theta$ is the angle between $d\textbf{x}^{(1)}$ and $d\textbf{x}^{(2)}$ and where $d\textbf{X}^{(1)}=dS_1\textbf{e}_1$ and $d\textbf{X}^{(2)}=dS_2\textbf{e}_1$ deform into $d\textbf{x}^{(1)}=ds_1\textbf{m}$ and $d\textbf{x}^{(2)}=ds_2\textbf{n}$.
+
+\end{description}
+
+\begin{description}
+	
+\item[Solution]	
+	
+\item \textbf{(a)} We remind that $\frac{\left| {\underset{\scriptscriptstyle-}{v}} \right|}{\left| {\underset{\scriptscriptstyle-}{V}} \right|}=\sqrt{\frac{\underset{\scriptscriptstyle-}{v}\cdot \underset{\scriptscriptstyle-}{v}}{\underset{\scriptscriptstyle-}{V}\cdot \underset{\scriptscriptstyle-}{V}}}=\sqrt{\frac{\left| {\underset{\scriptscriptstyle-}{V}} \right|{{{\underset{\scriptscriptstyle-}{e}}}_{i}}\cdot \underline{\underline{C}}\cdot \left| {\underset{\scriptscriptstyle-}{V}} \right|\underset{\scriptscriptstyle-}{e}_{i}}{\underset{\scriptscriptstyle-}{V}\cdot \underset{\scriptscriptstyle-}{V}}}=\sqrt{{{C}_{ij}}}$, then $\lambda \left( {\underset{\scriptscriptstyle-}{V}} \right)=\frac{\left| {\underset{\scriptscriptstyle-}{v}} \right|}{\left| {\underset{\scriptscriptstyle-}{V}} \right|}=\sqrt{{{C}_{ij}}}$
+
+Stretch for 
+\item \textbf{(b)}
+\item \textbf{(c)}
+
+\end{description}
+
+
+\end{document}

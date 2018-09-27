@@ -1,0 +1,71 @@
+clear all
+
+beta=0.00;
+
+% -------------------------
+% - reference configuration:
+% -------------------------
+% - we buikd a reference configuration of 10*10 points
+
+
+
+n_dots=10;
+
+
+TX1=[];
+TX2=[];
+TX3=[];
+
+    for kk=0:0.5:n_dots;
+        for kkk=0:0.5:n_dots;
+            X1=kkk;
+            X2=kk;
+            X3=k
+        
+            TX1=[TX1;X1];
+            TX2=[TX2;X2];
+            TX3=[TX3;X3];
+        end;
+    end;
+
+
+plot(TX1,TX2,'.');axis equal; axis([0 30 0 30]); box on;grid on;
+xlabel('x');
+ylabel('y');
+
+
+title(['Reference and deformed configuration, ','beta: ',num2str(beta)]);
+hold on;
+
+
+% -------------------------
+% - Current configuration (1):
+% -------------------------
+% - we buikd the deformed configuration
+
+ 
+
+    Tx1=TX1+0.1*TX2.*TX2 +10;
+    Tx2=beta*TX1.*TX1+TX2+10;
+
+
+    hold on;
+    plot(Tx1,Tx2,'.r');axis equal; axis([0 30 0 30 0 20]); box on;grid on;
+    
+
+    figure;
+    
+% - we plot the volume variation
+    [X,Y]=meshgrid([0:1:n_dots],[0:1:n_dots]);
+    
+    for kk1=1:size(X,1);
+        for kk2=1:size(X,2);
+            C(kk1,kk2)=det([1, 0.2*Y(kk1,kk2), 0; 2*beta*X(kk1,kk2), 1,0;0,0,1]);
+            x1(kk1,kk2)=X(kk1,kk2)+0.1*Y(kk1,kk2)*Y(kk1,kk2) +10;
+            x2(kk1,kk2)=beta*X(kk1,kk2)*X(kk1,kk2)+Y(kk1,kk2)+10;
+        end;
+    end;
+    
+    contourf(X,Y,C,20);axis square; colorbar; 
+    
+    title('beta:0.05/ LOCAL VOLUME VARIATIONS');

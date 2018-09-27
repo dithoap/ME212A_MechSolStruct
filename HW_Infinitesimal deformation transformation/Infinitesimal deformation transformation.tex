@@ -1,0 +1,204 @@
+\documentclass[letter,12pt]{article}
+
+\usepackage{subfig}
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+% - tenseur d'ordre 4
+\newcommand{\TTTT}[1]{\underline{\underline{\underline{\underline{#1}}}}}
+% - tenseur d'ordre 2
+\newcommand{\TT}[1]{\underline{\underline{#1}}}
+% - tenseur d'ordre 1
+\newcommand{\T}[1]{\underline{#1}}
+
+% - composante i - j de la contrainte: 
+\newcommand{\sigi}[1]{\sigma_{#1}}
+% - composante i - j de la deformation: 
+\newcommand{\epsi}[1]{\varepsilon_{#1}}
+
+% - tenseur de contrainte : 
+\newcommand{\sig}{\TT{\sigma}}
+\newcommand{\eps}{\TT{\varepsilon}}
+\newcommand{\C}{\TTTT{C}}
+\renewcommand{\S}{\TTTT{S}}
+
+% - composantes des tenseurs de Hooke: 
+\newcommand{\Ci}[1]{C_{#1}}
+\newcommand{\Si}[1]{S_{#1}}
+
+% - notations pour un vecteur
+\renewcommand{\Vec}[1]{\underline{#1}}
+
+
+% - notations pour un vecteur chapeau
+\newcommand{\Vecc}[1]{\hat{\underline{#1}}}
+
+% - notations pour un produit tensoriel
+\newcommand{\tens}[2]{#1 \otimes #2}
+
+% - notations pour les vecteurs de base
+\newcommand{\e}[1]{\Vec{e_{#1}}}
+
+% - contrainte equivalente pour les critères de plasticite
+\newcommand{\se}{\sigma_{eq}}
+
+% - deformation elastique
+\newcommand{\epse}{\TT{\varepsilon_e}}
+
+% - deformation elastique
+\newcommand{\epsp}{\TT{\varepsilon_p}}
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{ME 211A: Infinitesimal deformation/transformation}
+
+\maketitle
+
+\vspace{-1cm}
+
+
+\section*{quadratic transformation}
+
+In a plane $\left( \underline{O},{{\underline{e}}_{1}}, {{\underline{e}}_{2}} \right)$, we consider an homogeneous transformation $\underline{x}=\underline{\Phi }\left( \underline{X},t \right)$ made of the composition of:
+
+a pure expansion about the axis $\left(\underline{O}, {\underline{e}}_{1}\right)$ with a dilatation factor $\lambda$,
+
+a rotation of angle $\theta$ about the third axis $\left(\underline{O}, {\underline{e}}_{3}\right)$.
+
+\begin{description}
+\item \textbf{Question:} Calculate the gradient of the transformation?
+\item \textbf{Answer:} $\underline{\Phi }\left( \underline{X},t \right)$ is defined by:
+	\begin{equation}
+	\begin{aligned}
+	& {{x}_{1}}=\lambda {{X}_{1}}\cos \theta +{{X}_{2}}\sin \theta  \\ 
+	& {{x}_{2}}=-\lambda {{X}_{1}}\sin\theta +{{X}_{2}}\cos \theta  \\ 
+	& {{x}_{3}}={{X}_{3}} \\ 
+	\end{aligned}
+	\end{equation}
+So the gradient of transformation is:
+	\begin{equation}
+	\underline{\underline{F}}=\left[ \begin{matrix}
+	{{F}_{11}} & {{F}_{12}} & {{F}_{13}}  \\
+	{{F}_{21}} & {{F}_{22}} & {{F}_{23}}  \\
+	{{F}_{31}} & {{F}_{32}} & {{F}_{33}}  \\
+	\end{matrix} \right]=\frac{\partial \underline{x}}{\partial \underline{X}}=\left[ \begin{matrix}
+	\frac{\partial {{x}_{1}}}{\partial {{X}_{1}}} & \frac{\partial {{x}_{1}}}{\partial {{X}_{2}}} & \frac{\partial {{x}_{1}}}{\partial {{X}_{3}}}  \\
+	\frac{\partial {{x}_{2}}}{\partial {{X}_{1}}} & \frac{\partial {{x}_{2}}}{\partial {{X}_{2}}} & \frac{\partial {{x}_{2}}}{\partial {{X}_{3}}}  \\
+	\frac{\partial {{x}_{3}}}{\partial {{X}_{1}}} & \frac{\partial {{x}_{3}}}{\partial {{X}_{2}}} & \frac{\partial {{x}_{3}}}{\partial {{X}_{3}}}  \\
+	\end{matrix} \right]=\left[ \begin{matrix}
+	\lambda \cos \theta  & \sin \theta  & 0  \\
+	-\lambda \sin \theta  & \cos \theta  & 0  \\
+	0 & 0 & 1  \\
+	\end{matrix} \right]
+	\end{equation}
+\end{description}
+
+\begin{description}
+\item \textbf{Question:} Calculate $\underline{\underline{C}}$.
+\item \textbf{Answer:} 
+	\begin{equation}
+	\underline{\underline{C}}={{\underline{\underline{F}}}^{T}}\underline{\underline{F}}=\left[ \begin{matrix}
+	{{\lambda }^{2}}{{\cos }^{2}}\theta +{{\sin }^{2}}\theta  & \left( 1-{{\lambda }^{2}} \right)\sin \theta \cos \theta  & 0  \\
+	\left( 1-{{\lambda }^{2}} \right)\sin \theta \cos \theta  & {{\lambda }^{2}}si{{n}^{2}}\theta +{{\cos }^{2}}\theta  & 0  \\
+	0 & 0 & 1  \\
+	\end{matrix} \right]
+	\end{equation}
+\end{description}
+
+\begin{description}
+\item \textbf{Question:} Calculate $\underline{\underline{e}}$.
+\item \textbf{Answer:} 
+	\begin{equation}
+	\underline{\underline{e}}=\frac{1}{2}\left( \underline{\underline{C}}-\underline{\underline{1}} \right)=\frac{1}{2}\left[ \begin{matrix}
+	\left( {{\lambda }^{2}}-1 \right){{\cos }^{2}}\theta  & \left( 1-{{\lambda }^{2}} \right)\sin \theta \cos \theta  & 0  \\
+	\left( 1-{{\lambda }^{2}} \right)\sin \theta \cos \theta  & \left( {{\lambda }^{2}}-1 \right)si{{n}^{2}}\theta  & 0  \\
+	0 & 0 & 0  \\
+	\end{matrix} \right]
+	\end{equation}
+\end{description}
+
+\begin{description}
+\item \textbf{Question:} Calculate the displacement $\underline{\xi}$ and its gradient.
+\item \textbf{Answer:} 
+	\begin{equation}
+	\underline{\xi }=\underline{x}-\underline{X}=\left[ \begin{matrix}
+	\left( \lambda \cos \theta -1 \right){{X}_{1}}+{{X}_{2}}\sin \theta   \\
+	-\lambda {{X}_{1}}\sin\theta +{{X}_{2}}\left( \cos \theta -1 \right)  \\
+	0  \\
+	\end{matrix} \right]
+	\end{equation}
+	\begin{equation}
+	\underline{\underline{\nabla \xi }}=\left[ \begin{matrix}
+	\lambda \cos \theta -1 & \sin \theta  & 0  \\
+	-\lambda \sin\theta  & \cos \theta -1 & 0  \\
+	0 & 0 & 0  \\
+	\end{matrix} \right]
+	\end{equation}
+\end{description}
+
+\begin{description}
+\item \textbf{Question:} What is the condition for having small deformation $\left\| \underline{\underline{e}} \right\|\ll 1$? What is the physical interpretation for this condition?
+\item \textbf{Answer:} 
+	\begin{equation}
+	\begin{aligned}
+	& \left\| \underline{\underline{e}} \right\|={{\left( {{\lambda }^{2}}-1 \right)}^{2}}\left( {{\cos }^{4}}\theta +{{\sin }^{4}}\theta +2{{\sin }^{2}}\theta {{\cos }^{2}}\theta  \right) \\ 
+	& ={{\left( {{\lambda }^{2}}-1 \right)}^{2}}{{\left( {{\sin }^{2}}\theta +{{\cos }^{2}}\theta  \right)}^{2}} \\ 
+	& ={{\left( {{\lambda }^{2}}-1 \right)}^{2}}\ll 1 \\ 
+	\end{aligned}	
+	\end{equation}
+Thus, $\lambda \approx 1$ is the condition for having small deformation. The physical interpretation for this condition is that the expansion about axis $\left(\underline{O}, {\underline{e}}_{1}\right)$ has to be around $1$.
+\end{description}
+
+\begin{description}
+\item \textbf{Question:} Explain what happens in the specific configuration $\lambda=1,\theta=\pi/2?$
+\item \textbf{Answer:} 
+
+It's rigid body rotation. It rotates $\pi/2$.
+
+\end{description}
+
+
+\begin{figure}[h!]
+\begin{center}
+
+\end{center}
+%\caption{The considered continuum $\Omega$}
+\label{continuum}
+\end{figure}
+
+\end{document}
