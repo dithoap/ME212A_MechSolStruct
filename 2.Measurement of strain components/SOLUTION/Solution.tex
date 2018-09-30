@@ -1,0 +1,108 @@
+\documentclass[letter,12pt]{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+\input{newcommands}
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{\textbf{Practice on: \\
+		 Measurement of deformation components}}
+\date{}
+
+\maketitle
+
+\vspace{-1cm}
+
+
+To measure the in-plane deformation of a sheet of metal during a forming process,  three small hardness indentations are placed on the sheet.  Using a traveling microscope, we determine that the initial lengths of the sides of the triangle formed by the three indents are 1cm, 1cm, 1.414cm, as shown in the picture.  After deformation, the sides have lengths 1.5cm, 2.0cm and 2.8cm.  We  would like to use this information to determine the in-plane components of the Green-Lagrange deformation tensor.  
+
+\begin{center}
+	\includegraphics[scale=.6]{figures/INDENT}
+\end{center}
+
+
+	\noindent \textbf{Question:} Explain how the measurements can be used to determine $e_{11}$, $e_{22}$, $e_{12}$.
+
+ \noindent \textbf{Asnwer:} Let say that $\au$, $\bu$ and $\cu$ are the reference points and $\au'$, $\bu'$ and $\cu'$ are their images in the deformed configuration. \\
+ 
+ Let us recall that, $\forall \text{ }\Vu$, if $\vu$ is the image of $\Vu$ by the transformation $\phiu$ (such that $\xu = \phiu (\xu, \tu)$). Then,
+ \begin{equation}
+ \frac{|\vu|}{\Vu} = \frac{\sqrt{\vu \cdot \vu}}{\Vu \cdot \Vu} = \frac{\Vu \cdot \Cuu \cdot \Vu}{\Vu \cdot \Vu}
+ \label{eq:first}
+ \end{equation}
+ 
+ Here, we know that the change in length of the 3 vectors:
+ \begin{equation}
+ \au \bu = 1 \eu_1  \rightarrow |\au'\bu'| = 1.5
+ \end{equation}
+ Then using Eq. \ref{eq:first}: 
+ \begin{equation}
+ \frac{|\au'\bu'|}{\au \bu} = 1.5 = \sqrt{C_{11}} \rightarrow C_{11} = 2.25
+ \end{equation}
+ 
+  \begin{equation}
+ \au \cu = 1 \eu_2  \rightarrow |\au'\cu'| = 2
+ \end{equation}
+ Then using Eq. \ref{eq:first}: 
+ \begin{equation}
+ \frac{|\au'\cu'|}{\au \cu} = 2 = \sqrt{C_{22}} \rightarrow C_{22} = 4
+ \end{equation}
+ 
+  \begin{equation}
+ \bu \cu = \sqrt{2} \frac{\eu_2 - \eu_1}{\sqrt{2}} = \eu_2 - \eu_1  \rightarrow |\bu'\cu'| = 2.8
+ \end{equation}
+ Then using Eq. \ref{eq:first}: 
+ \begin{equation}
+ \frac{|\bu'\cu'|}{\bu \cu} = 2.8 = \frac{\sqrt{C_{11} + C_{22} - 2C_{12}}}{\sqrt{2}} \rightarrow C_{12} = -4
+ \end{equation}
+
+Then, $\euu$ (The Green-Lagrange strain tensor) is easily defined as
+\begin{equation}
+\euu = \frac{1}{2} (\Cuu - \Iuu)
+\end{equation}
+where the components of $\Cuu$ are given above and $\Iuu$ is the second order identity tensor.
+
+ 
+ 
+ 
+
+
+ 
+
+\end{document}
