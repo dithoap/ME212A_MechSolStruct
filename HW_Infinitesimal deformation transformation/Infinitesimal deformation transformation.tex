@@ -133,8 +133,8 @@ So the gradient of transformation is:
 \item \textbf{Answer:} 
 	\begin{equation}
 	\underline{\underline{C}}={{\underline{\underline{F}}}^{T}}\underline{\underline{F}}=\left[ \begin{matrix}
-	{{\lambda }^{2}}{{\cos }^{2}}\theta +{{\sin }^{2}}\theta  & \left( 1-{{\lambda }^{2}} \right)\sin \theta \cos \theta  & 0  \\
-	\left( 1-{{\lambda }^{2}} \right)\sin \theta \cos \theta  & {{\lambda }^{2}}si{{n}^{2}}\theta +{{\cos }^{2}}\theta  & 0  \\
+	{{\lambda }^{2}}  & 0  & 0  \\
+	0  & 1  & 0  \\
 	0 & 0 & 1  \\
 	\end{matrix} \right]
 	\end{equation}
@@ -145,8 +145,8 @@ So the gradient of transformation is:
 \item \textbf{Answer:} 
 	\begin{equation}
 	\underline{\underline{e}}=\frac{1}{2}\left( \underline{\underline{C}}-\underline{\underline{1}} \right)=\frac{1}{2}\left[ \begin{matrix}
-	\left( {{\lambda }^{2}}-1 \right){{\cos }^{2}}\theta  & \left( 1-{{\lambda }^{2}} \right)\sin \theta \cos \theta  & 0  \\
-	\left( 1-{{\lambda }^{2}} \right)\sin \theta \cos \theta  & \left( {{\lambda }^{2}}-1 \right)si{{n}^{2}}\theta  & 0  \\
+	\frac{{{\lambda }^{2}}-1}{2}  & 0  & 0  \\
+	0  & 0  & 0  \\
 	0 & 0 & 0  \\
 	\end{matrix} \right]
 	\end{equation}
@@ -176,9 +176,7 @@ So the gradient of transformation is:
 \item \textbf{Answer:} 
 	\begin{equation}
 	\begin{aligned}
-	& \left\| \underline{\underline{e}} \right\|={{\left( {{\lambda }^{2}}-1 \right)}^{2}}\left( {{\cos }^{4}}\theta +{{\sin }^{4}}\theta +2{{\sin }^{2}}\theta {{\cos }^{2}}\theta  \right) \\ 
-	& ={{\left( {{\lambda }^{2}}-1 \right)}^{2}}{{\left( {{\sin }^{2}}\theta +{{\cos }^{2}}\theta  \right)}^{2}} \\ 
-	& ={{\left( {{\lambda }^{2}}-1 \right)}^{2}}\ll 1 \\ 
+	& \left\| \underline{\underline{e}} \right\|=\sqrt{\underline{\underline{e}}:\underline{\underline{e}}} =\left|\frac{\lambda^2-1}{2}\right|\ll 1 \to |\lambda| \approx 1 \\ 
 	\end{aligned}	
 	\end{equation}
 Thus, $\lambda \approx 1$ is the condition for having small deformation. The physical interpretation for this condition is that the expansion about axis $\left(\underline{O}, {\underline{e}}_{1}\right)$ has to be around $1$.
@@ -188,7 +186,18 @@ Thus, $\lambda \approx 1$ is the condition for having small deformation. The phy
 \item \textbf{Question:} Explain what happens in the specific configuration $\lambda=1,\theta=\pi/2?$
 \item \textbf{Answer:} 
 
+$\underline{\underline{e}}=\underline{\underline{0}}\to$
 It's rigid body rotation. It rotates $\pi/2$.
+$\underline{\underline{\nabla \xi }}=\left[ \begin{matrix}
+-1 & 1  & 0  \\
+-1 & -1 & 0  \\
+0 & 0 & 0 \end{matrix} \right]$
+
+$\underline{\underline{\varepsilon}}=\left[ \begin{matrix}
+-1 & 0  & 0  \\
+0 & -1 & 0  \\
+0 & 0 & 0 \end{matrix} \right]\ne\underline{\underline{e}}$, it is not small perturbation, even if it is small deformation.
+
 
 \end{description}
 
