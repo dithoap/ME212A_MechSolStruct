@@ -116,13 +116,34 @@ Given the following right Cauchy-Green deformation tensor at a point
 	
 \item[Solution]	
 	
-\item \textbf{(a)} We remind that $\frac{\left| {\underset{\scriptscriptstyle-}{v}} \right|}{\left| {\underset{\scriptscriptstyle-}{V}} \right|}=\sqrt{\frac{\underset{\scriptscriptstyle-}{v}\cdot \underset{\scriptscriptstyle-}{v}}{\underset{\scriptscriptstyle-}{V}\cdot \underset{\scriptscriptstyle-}{V}}}=\sqrt{\frac{\left| {\underset{\scriptscriptstyle-}{V}} \right|{{{\underset{\scriptscriptstyle-}{e}}}_{i}}\cdot \underline{\underline{C}}\cdot \left| {\underset{\scriptscriptstyle-}{V}} \right|\underset{\scriptscriptstyle-}{e}_{i}}{\underset{\scriptscriptstyle-}{V}\cdot \underset{\scriptscriptstyle-}{V}}}=\sqrt{{{C}_{ij}}}$, then $\lambda \left( {\underset{\scriptscriptstyle-}{V}} \right)=\frac{\left| {\underset{\scriptscriptstyle-}{v}} \right|}{\left| {\underset{\scriptscriptstyle-}{V}} \right|}=\sqrt{{{C}_{ij}}}$
+\item \textbf{(a)} We remind that
+ \begin{equation}
+	\frac{\left| \underline{v} \right|}{\left| \underline{V} \right|}=
+	\frac{\sqrt{\underline{v} \cdot \underline{v}}}{\sqrt{\underline{V} \cdot \underline{V}}} = \frac{\underline{V} \cdot \underline{\underline{C}} \cdot \underline{V}}{\underline{V} \cdot \underline{V}}=\sqrt{{{C}_{ii}}}
+	\label{eq:first}
+ \end{equation} 
 
-Stretch for 
+Thus, stretch for direction $\underline{e}_{1}$ is $\sqrt{{C}_{11}}=3$, stretch for direction $\underline{e}_{2}$ is $\sqrt{{C}_{22}}=2$, stretch for direction $\underline{e}_{3}$ is $\sqrt{{C}_{33}}=0.6$,
+
 \item \textbf{(b)}
+
+To get stretch for direction $\underline{e}_{1}+\underline{e}_{2}$, we define $|\underline{V}| = \frac{1}{\sqrt{2}}(\underline{e}_{1}+\underline{e}_{2})$, so we have
+\begin{equation}
+\underline{v} \cdot \underline{v} = \underline{V} \cdot \underline{\underline{C}} \cdot \underline{V} = \frac{1}{2} \cdot \left( \begin{matrix}1\\1\\0\\\end{matrix} \right) \left[ \begin{matrix}9 & 0 & 0\\0 & 4 & 0\\0 & 0 & 0.36\\\end{matrix} \right] \left( \begin{matrix}1\\1\\0\\\end{matrix} \right) = \frac{13}{2}
+\end{equation}
+So the stretch is $\frac{13}{2}$.
+
 \item \textbf{(c)}
 
+\begin{equation}
+	\sin \theta = \frac{|\underline{dx}^{(1)}| \cdot  |\underline{dx}^{(2)}|}{|\underline{dX}^{(1)}| \cdot  |\underline{dX}^{(2)}|} = \frac{dS_1 \underline{e}_{1} \cdot \underline{\underline{C}} \cdot \underline{e}_{2}dS_2}{dS_1dS_2} = C_{12} = 0
+\end{equation}
+
+Thus no angle variation, $\cos \theta = 1$.
+
 \end{description}
+
+
 
 
 \end{document}

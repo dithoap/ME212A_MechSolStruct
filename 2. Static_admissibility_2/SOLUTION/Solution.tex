@@ -1,0 +1,153 @@
+\documentclass[letter,12pt]{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+\input{newcommands}
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{\textbf{Static admissibility \#2}}
+\date{}
+
+\maketitle
+
+\vspace{-1cm}
+
+
+	\noindent \textbf{Question:} We consider a prismatic domain with a Carthesian coordinate system $(\underline{O}, \underline{e}_1, \underline{e}_2, \underline{e}_3)$. \\
+	
+	The domain is clamped over the plane (z=0). The top surface is subjected to a uniform density of tractions (intensity T about direction $\underline{e}_1$). The other surfaces are free of traction and body forces are neglected. \\
+ 
+ \noindent \textbf{Question:} Write all the equations defining static admissibility for $\underline{\underline{\sigma}}$ and expand them. \\
+ 
+ \noindent \textbf{Answer:} Find $\underline{\underline{\sigma}}$ such that $\underline{\underline{\sigma}} =^T\underline{\underline{\sigma}} $,  $\forall n \in \Omega$ \\
+ Interior equilibrium equation: 
+ \begin{equation}
+ \underline{\diver} \sigmauu = \underline{0}, \forall m \in \Omega
+ \end{equation}
+ Boundary equilibrium equation: 
+ \begin{equation}
+ \sigmauu \cdot \underline{n} = \underline{0}, \forall n \in S_{1}^{-} \cup S_{1}^{+} \cup S_{2}^{-} \cup S_{2}^{+}
+ \end{equation}
+ \begin{equation}
+ \sigmauu \cdot \underline{n} = T \cdot \eu_{1}, \forall n \in S_{3}^{+}
+ \end{equation}
+
+ Expand: \\
+ Interior equilibrium equation:
+ \begin{equation}
+ \begin{aligned}
+ & \sigma_{11,1}+\sigma_{12,2}+\sigma_{13,3}=0, (1a) \\
+ & \sigma_{21,1}+\sigma_{22,2}+\sigma_{23,3}=0, (1b) \\
+ & \sigma_{31,1}+\sigma_{32,2}+\sigma_{33,3}=0, (1c)
+ \end{aligned}
+ \end{equation}
+ Boundary equilibrium equation: 
+ \begin{equation}
+ S_{1}^{-}: \text{	}
+ \begin{aligned}
+ &\sigma_{11}(0,y,z)=0\\
+ &\sigma_{21}(0,y,z)=0\\
+ &\sigma_{31}(0,y,z)=0
+ \end{aligned}
+ \end{equation}
+ \begin{equation}
+ S_{1}^{+}: \text{	}
+ \begin{aligned}
+ &\sigma_{11}(L,y,z)=0\\
+ &\sigma_{21}(L,y,z)=0\\
+ &\sigma_{31}(L,y,z)=0
+ \end{aligned}
+ \end{equation}
+ \begin{equation}
+ S_{2}^{-}: \text{	}
+ \begin{aligned}
+ &\sigma_{12}(x,0,z)=0\\
+ &\sigma_{22}(x,0,z)=0\\
+ &\sigma_{32}(x,0,z)=0
+ \end{aligned}
+ \end{equation}
+ \begin{equation}
+ S_{2}^{+}: \text{	}
+ \begin{aligned}
+ &\sigma_{12}(x,L,z)=0\\
+ &\sigma_{22}(x,L,z)=0\\
+ &\sigma_{32}(x,L,z)=0
+ \end{aligned}
+ \end{equation}
+ \begin{equation}
+ S_{3}^{+}: \text{	}
+ \begin{aligned}
+ &\sigma_{13}(x,y,L)=T\\
+ &\sigma_{23}(x,y,L)=0\\
+ &\sigma_{33}(x,y,L)=0
+ \end{aligned}
+ \end{equation}
+ \\ 
+ \noindent \textbf{Question:} Clearly define the set of of statically admissible stress fields, $S^{ad}$. \\
+ 
+ \noindent \textbf{Answer:} All stress field that satisfy the condition of the first question are $S^{ad}$.
+ \\
+ 
+ \noindent \textbf{Question:} Can the following stress field be a viable solution for the problem:
+ \begin{equation}
+ \sigma_{13}=\sigma_{31}=T \quad ; \quad \sigma_{ij} =0 \quad otherwise
+ \end{equation} 
+ 
+ \noindent \textbf{Answer:}
+ It doesn't satisfy the boundary condition in the face $S_{1}^{-}$ and $S_{1}^{+}$, so it can't be a viable solution for this problem.
+
+%
+%------------------------------------------------------------------------
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./volume}
+	\caption{Sketch of the problem}
+\end{figure}
+%------------------------------------------------------------------------
+%
+
+
+ 
+ 
+ 
+
+
+ 
+
+\end{document}
