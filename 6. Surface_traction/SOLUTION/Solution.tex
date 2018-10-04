@@ -1,0 +1,83 @@
+\documentclass[letter,12pt]{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+\input{newcommands}
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{\textbf{Practice on stresses and static admissibility}}
+\date{}
+
+\maketitle
+
+\vspace{-1cm}
+
+Let us consider the continuum body $\Omega$ in its present configuration where 
+\begin{equation}
+\Omega = \{ 0 \le x_1 \le a; 0 \le x_2 \le b; 0 \le x_3\le b;\}
+\end{equation}
+and $\partial \Omega$ is boundaries of the domain $\Omega$. \\
+
+\noindent \textbf{Question 1:} What are the surface tractions over the boundary $\partial \Omega$ when the stress state is $\sigmauu = a (\eu_3 \times \eu_3)$? \\
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.4\linewidth]{figures/p1}
+	\caption{Parallelepiped subjected to $\sigmauu = a (\eu_3 \times \eu_3)$.}
+	\label{fig:replacewithrealfigure}
+\end{figure}
+
+
+\noindent \textbf{Answer 1:} $\sigmauu = a (\eu_3 \times \eu_3)$ has a physical meaning that uniform traction of magnitude $a$ about the axis $3$. Normal surface traction over surfaces with normal $\eu_3$. In this case, $a$ is uniform to a pressure with unit Pa or MPa (see Fig. \ref{fig:replacewithrealfigure}).\\
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=0.4\linewidth]{figures/p2}
+	\caption{Parallelepiped subjected to$\sigmauu (\xu) = \tau (\eu_1 \otimes \eu_3 + \eu_3 \otimes \eu_1 )$.}
+	\label{fig:replacewithrealfigure2}
+\end{figure}
+
+
+\newpage
+\noindent \textbf{Question 2:} What are the surface tractions over the boundary $\partial \Omega$ when the stress state is $\sigmauu (\xu) = \tau (\eu_1 \otimes \eu_3 + \eu_3 \otimes \eu_1 )$? \\
+
+\noindent \textbf{Answer 2:}  $\sigmauu (\xu) = \tau (\eu_1 \otimes \eu_3 + \eu_3 \otimes \eu_1 )$ has a physical meaning that shear tractions over the surfaces with normals $\eu_1$ and $\eu_3$. Fig. \ref{fig:replacewithrealfigure2} shows a parallelepiped under shear stress. \\
+
+
+\end{document}

@@ -49,18 +49,28 @@
 \vspace{-1cm}
 
 
-	\noindent \textbf{Question:} We consider a prismatic domain with a Carthesian coordinate system $(\underline{O}, \underline{e}_1, \underline{e}_2, \underline{e}_3)$. \\
+Let us consider a prismatic domain with a Carthesian coordinate system $(\underline{O}, \underline{e}_1, \underline{e}_2, \underline{e}_3)$. The domain is clamped over the plane (z=0). The top surface is subjected to a uniform density of tractions (intensity T about direction $\underline{e}_1$). The other surfaces are free of traction and body forces are neglected. \\
 	
-	The domain is clamped over the plane (z=0). The top surface is subjected to a uniform density of tractions (intensity T about direction $\underline{e}_1$). The other surfaces are free of traction and body forces are neglected. \\
+%
+%------------------------------------------------------------------------
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./volume}
+	\caption{Sketch of the problem}
+\end{figure}
+%------------------------------------------------------------------------
+%
  
  \noindent \textbf{Question:} Write all the equations defining static admissibility for $\underline{\underline{\sigma}}$ and expand them. \\
  
- \noindent \textbf{Answer:} Find $\underline{\underline{\sigma}}$ such that $\underline{\underline{\sigma}} =^T\underline{\underline{\sigma}} $,  $\forall n \in \Omega$ \\
+ \noindent \textbf{Answer:} Find $ \sigmauu $ such that $\underline{\underline{\sigma}} =\underline{\underline{\sigma}}^T $,  $\forall n \in \Omega$ \\
+ 
  Interior equilibrium equation: 
  \begin{equation}
  \underline{\diver} \sigmauu = \underline{0}, \forall m \in \Omega
- \end{equation}
- Boundary equilibrium equation: 
+ \end{equation} \\
+ 
+ Boundary conditions: 
  \begin{equation}
  \sigmauu \cdot \underline{n} = \underline{0}, \forall n \in S_{1}^{-} \cup S_{1}^{+} \cup S_{2}^{-} \cup S_{2}^{+}
  \end{equation}
@@ -76,8 +86,9 @@
  & \sigma_{21,1}+\sigma_{22,2}+\sigma_{23,3}=0, (1b) \\
  & \sigma_{31,1}+\sigma_{32,2}+\sigma_{33,3}=0, (1c)
  \end{aligned}
- \end{equation}
- Boundary equilibrium equation: 
+ \end{equation} \\
+ 
+ Boundary conditions: 
  \begin{equation}
  S_{1}^{-}: \text{	}
  \begin{aligned}
@@ -126,21 +137,13 @@
  
  \noindent \textbf{Question:} Can the following stress field be a viable solution for the problem:
  \begin{equation}
- \sigma_{13}=\sigma_{31}=T \quad ; \quad \sigma_{ij} =0 \quad otherwise
+ \sigma_{13}=\sigma_{31}=T \quad ; \quad \text{otherwise} \quad  \sigma_{ij} =0 
  \end{equation} 
  
  \noindent \textbf{Answer:}
  It doesn't satisfy the boundary condition in the face $S_{1}^{-}$ and $S_{1}^{+}$, so it can't be a viable solution for this problem.
 
-%
-%------------------------------------------------------------------------
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./volume}
-	\caption{Sketch of the problem}
-\end{figure}
-%------------------------------------------------------------------------
-%
+
 
 
  

@@ -1,0 +1,167 @@
+\documentclass[letter,12pt]{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+\input{newcommands}
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{\textbf{Static admissibility \#1}}
+\date{}
+
+\maketitle
+
+\vspace{-1cm}
+
+
+A prismatic concrete column of mass density $\rho$ supports its own weight (height of the column is H, squared cross section, bottom cross section is centered on point $O=(0,0,0)$, axis of the column is the vertical direction ($O$,$\eu_2$)).  We assume that the solid is subjected to a uniform gravitational body force of magnitude $g$ per unit mass. 
+
+%
+%------------------------------------------------------------------------
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./cube}
+	\caption{Sketch of the problem}
+\end{figure}
+%------------------------------------------------------------------------
+%
+
+All surfaces are free of traction except the bottom surface which is perfectly clamped. \\
+
+\noindent \textbf{Question:} Write all the equations defining static admissibility  for $\sigmauu$ and expand them.\\
+
+\noindent \textbf{Answer:} Set of static admissibility
+Find $\sigmauu $ such that $ \sigmauu =\underline{\underline{\sigma}}^T $,  $\forall n \in \Omega$ \\
+
+Interior equilibrium equation: 
+\begin{equation}
+\underline{\diver} \sigmauu -\rho g \eu_{2} = \underline{0}, \text{ }\forall m \in \Omega
+\end{equation}
+Boundary conditions: 
+\begin{equation}
+\sigmauu \cdot \underline{n} = \underline{0}, \text{ } \forall n \in S_{1}^{-} \cup S_{1}^{+} \cup S_{2}^{+} \cup S_{3}^{-} \cup S_{3}^{+}
+\end{equation}
+
+The above equations can be expanded as follows: \\
+
+Interior equilibrium equation:
+\begin{equation}
+\begin{aligned}
+& \sigma_{11,1}+\sigma_{12,2}+\sigma_{13,3}=0, \text{ }(1a) \\
+& \sigma_{21,1}+\sigma_{22,2}+\sigma_{23,3}-\rho g=0, \text{ }(1b) \\
+& \sigma_{31,1}+\sigma_{32,2}+\sigma_{33,3}=0, \text{ }(1c)
+\end{aligned}
+\end{equation}\\
+
+Boundary conditions: 
+\begin{equation}
+\text{For surface } S_{1}^{-}: \text{	}
+\begin{aligned}
+&\sigma_{11}(-H/2,y,z)=0\\
+&\sigma_{21}(-H/2,y,z)=0\\
+&\sigma_{31}(-H/2,y,z)=0
+\end{aligned}
+\end{equation} \\
+
+\begin{equation}
+\text{For surface } S_{1}^{+}: \text{	}
+\begin{aligned}
+&\sigma_{11}(H/2,y,z)=0\\
+&\sigma_{21}(H/2,y,z)=0\\
+&\sigma_{31}(H/2,y,z)=0
+\end{aligned}
+\end{equation} \\
+
+\begin{equation}
+\text{For surface } S_{2}^{+}: \text{	}
+\begin{aligned}
+&\sigma_{12}(x,H,z)=0\\
+&\sigma_{22}(x,H,z)=0\\
+&\sigma_{32}(x,H,z)=0
+\end{aligned}
+\end{equation} \\
+
+\begin{equation}
+\text{For surface } S_{3}^{-}: \text{	}
+\begin{aligned}
+&\sigma_{13}(x,y,-H/2)=0\\
+&\sigma_{23}(x,y,-H/2)=0\\
+&\sigma_{33}(x,y,-H/2)=0
+\end{aligned}
+\end{equation} \\
+
+\begin{equation}
+\text{For surface } S_{3}^{+}: \text{	}
+\begin{aligned}
+&\sigma_{13}(x,y,H/2)=0\\
+&\sigma_{23}(x,y,H/2)=0\\
+&\sigma_{33}(x,y,H/2)=0
+\end{aligned}
+\end{equation}\\
+	
+\noindent \textbf{Question:} Can the following stress field be a viable solution for the problem:\\
+\begin{equation}
+\sigma_{22}=-\rho g (H-x_2) \quad ; \quad  \text{otherwise} \quad \sigma_{ij} =0
+\end{equation} 
+\noindent \textbf{Answer:} 
+First, lets check if the \textbf{interior equilibrium equation} is satisfied:
+\begin{equation}
+\begin{aligned}
+& \sigma_{11,1}+\sigma_{12,2}+\sigma_{13,3}=0+0+0=0 \\
+& \sigma_{21,1}+\sigma_{22,2}+\sigma_{23,3}-\rho g=0+\rho g+0-\rho g=0 \\
+& \sigma_{31,1}+\sigma_{32,2}+\sigma_{33,3}=0+0+0=0
+\end{aligned}
+\end{equation}
+From above, we can see that the internal equilibrium equation is satisfied. \\
+
+Then, lets check if the \textbf{boundary condition} is satisfied: \\
+For the surface $S_{1}^{-}, S_{1}^{+}, S_{3}^{-}$ and $S_{3}^{+}$, it doesn't have the stress component $\sigma_{22}$. And other stress components are all zero, so they are satisfied. For the surface $S_{2}^{+}$, we have $\sigma_{22} = -\rho g (H-H) = 0$ which means it also satisfies the free boundary condition. Therefore, the proposed stress field could be a viable solution.
+\\
+
+
+
+
+
+ 
+ 
+ 
+
+
+ 
+
+\end{document}

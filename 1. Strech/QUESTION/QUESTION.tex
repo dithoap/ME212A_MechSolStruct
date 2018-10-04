@@ -1,5 +1,6 @@
 \documentclass[letter,12pt]{article}
 
+\usepackage{subfig}
 
 \usepackage[english]{babel}
 
@@ -50,7 +51,6 @@
 
 % - tenseur de contrainte : 
 \newcommand{\sig}{\TT{\sigma}}
-\newcommand{\eps}{\TT{\varepsilon}}
 \newcommand{\C}{\TTTT{C}}
 \renewcommand{\S}{\TTTT{S}}
 
@@ -80,11 +80,13 @@
 % - deformation elastique
 \newcommand{\epsp}{\TT{\varepsilon_p}}
 
+\input{newcommands}
+
 
 \begin{document}
 \pagestyle{fancy}
 
-\title{\textbf{Maximum shear stress}}
+\title{\textbf{Stretch }}
 \date{}
 
 \maketitle
@@ -92,24 +94,22 @@
 \vspace{-1cm}
 
 
+Given the following right Cauchy-Green deformation tensor $C$
 
-
-Let us consider a tensile test as in figure \ref{ex2}. During the test, the stress state is homogeneous within the part $\Omega$ of a material sample. For any material point of $\Omega$, the local stress tensor is:
 \begin{equation}
-\sig  = 100 \cdot  \e{1} \otimes \e{1} 
+\left[ C \right]=\left[ \begin{matrix}
+9 & 0 & 0  \\
+0 & 4 & 0  \\
+0 & 0 & 0.36  \\
+\end{matrix} \right]
 \end{equation}
 
-\begin{figure}[h!]
-	\begin{center}
-		\includegraphics[width=0.4\columnwidth]{./exo2_traction}
-		\caption{Tensile test. We assume an homogeneous stress state within the central part of the sample.}\label{ex2}
-	\end{center}
-\end{figure}
-
 \begin{description}
-\item{\textbf{Question 1}} Calculate the global force $\Vec{F}$ that is applied on the material sample by the experimental tensile device.
-\item{\textbf{Question 2}} We cut the sample by a ``fictive" plane. The orientation of this plane is denoted by the angle $\theta$ between the $\Vec{e}_2$ axis and the unit normal vector $\Vec{n}$. Calculate as a function of $\theta$ the stress vector applied on this surface.
-\item{\textbf{Question 3}} Find the value of $\theta$ for which the shear stress is maximum. 
+	
+\item \textbf{(a)} Find the stretch for the material elements that were in the direction of $\eu_1$, $\eu_2$ and $\eu_3$.
+\item \textbf{(b)} Find the stretch for the material element that was in the direction of $\eu_1 + \eu_2$.
+\item \textbf{(c)} Find $ \cos\theta$, where $\theta$ is the angle between $d \xu^{(1)} $ and $d \xu^{(2)}$ and where $d \Xu^{(1)}=dS_1 \eu_1$ and $d \Xu^{(2)}=dS_2\eu_1$ deform into $d \xu^{(1)}=ds_1 \T{m}$ and $d \xu^{(2)}=ds_2 \T{u}$.
+
 \end{description}
 
 

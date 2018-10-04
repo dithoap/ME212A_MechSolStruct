@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.14)  26 SEP 2018 22:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.14)  4 OCT 2018 11:17
 entering extended mode
 **./Maximum_shear_stress.tex
 (Maximum_shear_stress.tex
@@ -369,7 +369,7 @@ LaTeX Warning: No \author given.
 <./exo2_traction.pdf, id=1, 309.155pt x 295.1025pt>
 File: ./exo2_traction.pdf Graphic file (type pdf)
 <use ./exo2_traction.pdf>
-Package pdftex.def Info: ./exo2_traction.pdf  used on input line 94.
+Package pdftex.def Info: ./exo2_traction.pdf  used on input line 104.
 (pdftex.def)             Requested size: 183.23302pt x 174.91046pt.
 [1
 
@@ -377,18 +377,18 @@ Package pdftex.def Info: ./exo2_traction.pdf  used on input line 94.
 action.pdf>] (Maximum_shear_stress.aux) ) 
 Here is how much of TeX's memory you used:
  3682 strings out of 493305
- 49737 string characters out of 3138868
+ 49743 string characters out of 3138868
  111262 words of memory out of 3000000
  7162 multiletter control sequences out of 15000+200000
  11797 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,43p,321b,255s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,6n,43p,321b,259s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
 8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Maximum_shear_stress.pdf (1 page, 58998 bytes).
+Output written on Maximum_shear_stress.pdf (1 page, 59285 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
