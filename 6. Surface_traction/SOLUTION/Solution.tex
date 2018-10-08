@@ -15,6 +15,12 @@
 \usepackage{bbold}
 \usepackage{textcomp}
 
+\usepackage{subcaption}
+\usepackage{booktabs, array, dcolumn}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcolumntype{d}{D{.}{.}{2.3}}
+\newcolumntype{C}{p}
+
 
 \setlength{\oddsidemargin}{0in}
 \setlength{\evensidemargin}{0in}
@@ -56,26 +62,50 @@ and $\partial \Omega$ is boundaries of the domain $\Omega$. \\
 
 \noindent \textbf{Question 1:} What are the surface tractions over the boundary $\partial \Omega$ when the stress state is $\sigmauu = a (\eu_3 \times \eu_3)$? \\
 
+
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.4\linewidth]{figures/p1}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/normal333d}
+		\caption{3D isometric view}
+	\end{subfigure}
+	\hspace{10mm}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/normal33}
+		\caption{x1-x3 plane view}
+	\end{subfigure}	
 	\caption{Parallelepiped subjected to $\sigmauu = a (\eu_3 \times \eu_3)$.}
 	\label{fig:replacewithrealfigure}
 \end{figure}
 
 
+
 \noindent \textbf{Answer 1:} $\sigmauu = a (\eu_3 \times \eu_3)$ has a physical meaning that uniform traction of magnitude $a$ about the axis $3$. Normal surface traction over surfaces with normal $\eu_3$. In this case, $a$ is uniform to a pressure with unit Pa or MPa (see Fig. \ref{fig:replacewithrealfigure}).\\
 
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=0.4\linewidth]{figures/p2}
-	\caption{Parallelepiped subjected to$\sigmauu (\xu) = \tau (\eu_1 \otimes \eu_3 + \eu_3 \otimes \eu_1 )$.}
-	\label{fig:replacewithrealfigure2}
-\end{figure}
 
 
 \newpage
 \noindent \textbf{Question 2:} What are the surface tractions over the boundary $\partial \Omega$ when the stress state is $\sigmauu (\xu) = \tau (\eu_1 \otimes \eu_3 + \eu_3 \otimes \eu_1 )$? \\
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/shear133d}
+		\caption{3D isometric view}
+	\end{subfigure}
+	\hspace{10mm}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/shear13}
+		\caption{x1-x3 plane view}
+	\end{subfigure}	
+	\caption{Parallelepiped subjected to $\sigmauu (\xu) = \tau (\eu_1 \otimes \eu_3 + \eu_3 \otimes \eu_1 )$.}
+	\label{fig:replacewithrealfigure2}
+\end{figure}
+
 
 \noindent \textbf{Answer 2:}  $\sigmauu (\xu) = \tau (\eu_1 \otimes \eu_3 + \eu_3 \otimes \eu_1 )$ has a physical meaning that shear tractions over the surfaces with normals $\eu_1$ and $\eu_3$. Fig. \ref{fig:replacewithrealfigure2} shows a parallelepiped under shear stress. \\
 
