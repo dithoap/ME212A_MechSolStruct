@@ -1,0 +1,80 @@
+\documentclass[letter,12pt]{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+\input{newcommands}
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{\textbf{Practice: \\ Static and Kinematic Admissibility}}
+\date{}
+
+\maketitle
+
+\vspace{-1cm}
+
+
+%\section{Problem 1 }
+%A homogeneous continuum as in Fig. 1 is clamped on surface $S_3^-(z = 0)$  and submitted to a uniform pressure $p_0$ over the surface $S_1^+(x=l_1)$. \\
+%\input{solution1.tex}
+
+
+
+\section{Problem 2}
+Let us consider a sphere with cavity (exterior radius $R_e$ and internal radius $R_i$). The external surface $S_e$ is free of loading and the interior surface $S_i$ is submitted to a pressure $p_0$. The material is assumed to be isotropic linear elastic with young modulus $E$ and Poisson ratio $\nu$. \\
+
+\input{solution2.tex}
+
+
+
+
+\section{Problem 3}
+Let us consider a domain $\Omega$, simply supported by a rigid basis ($\Gamma$). $\Omega$ is submitted to gravity volume forces $\fu = \rho g \underline{y} $ and to uniform pressure $p > 0$ over every vertical side. We assume plane stresses in the plane of $x-y$ and the material is isotropic linear elastic with Young modulus $E$ and Poisson ratio $\nu$. \\
+
+\input{solution3.tex}
+
+
+
+
+\section{Problem 4}
+Let us consider a classical test in material engineering that make possible to identify the oedometric  modelus $\hat{E}$. A cylinder material domain $\Omega$ is compressed due to the prescribed motion of the top surface $\underline{u} = -U \eu_z $. All surfaces are assumed to be perfect contact without friction. Note that $\Pu = -P \eu_z$ the resulting force that is necessary to press the materials (Young modulus $E$ and Poisson ratio $\nu$. \\
+
+\input{solution4.tex}
+
+
+\end{document}

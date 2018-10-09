@@ -1,0 +1,141 @@
+
+\noindent \textbf{Question 1}: Write the static admissibility equations! \\
+
+\textbf{Answer:} Find $\sigmauu $ symmetric such that 
+\begin{equation}
+\begin{split}
+& \text{(a)  } \sigmauu \cdot \underline{n} = \underline{0} \quad \forall \text{ } M \in S_e \quad \text{Boundary equation} \\
+& \text{(b)  } \sigmauu \cdot \underline{n} = - p_0 \underline{n} \quad \forall \text{ } M \in S_i \quad \text{Boundary equation} \\
+& \text{(c)  } \divu \sigmauu = \underline{0} \quad \forall \text{ } M \in \Omega \quad \text{Internal equilibrium}
+\end{split}
+\end{equation}
+
+\noindent \textbf{Question 2}: Please expand this equation using spherical  coordinates system! \\
+
+\textbf{Answer:} In spherical coordinates,
+\begin{equation}
+\sigmauu = \left[
+\begin{matrix}
+\sigmarr & \sigmart & \sigmarf \\
+\sigmart & \sigmatt & \sigmatf \\
+\sigmarf & \sigmatf & \sigmaff 
+\end{matrix}
+\right]
+\end{equation}
+
+From Eq. (a),
+\begin{equation}
+\sigmarr(r = R_e,\theta,\varphi) = \sigmart (r=R_e,\theta,\varphi) = \sigmarf(r=R_e,\theta,\varphi) = 0
+\end{equation}
+
+From Eq. (b),
+\begin{equation}
+\begin{split}
+& -\sigmarr(r=R_i,\theta,\varphi) = p_0 \\
+& -\sigmart(r=R_i,\theta,\varphi) = 0 \\
+& -\sigmarf(r=R_i,\theta,\varphi) = 0
+\end{split}
+\end{equation}
+
+From Eq. (c) $\rightarrow$ See Textbook equation 1.11a (divergence with spherical coordinates)
+
+
+
+\noindent \textbf{Question 3}: Let's assume that the following stress tensor 
+\begin{equation}
+\sigmauu = \left[ \begin{matrix}
+\sigmarr &0 &0 \\
+0 & \sigmatt & 0 \\
+0 & 0 & \sigmaff
+\end{matrix} \right]
+\end{equation}
+with 
+\begin{equation}
+\sigmarr = -A\left[\frac{B}{r^3} - 1 \right]
+\end{equation}
+and 
+\begin{equation}
+\sigmatt = \sigmaff = A \left[\frac{B}{2r^3} + 1 \right]
+\end{equation}
+Please calculate the coefficient $A$ and $B$ so that $\sigmauu$ could be a solution of the problem! \\ 
+
+\textbf{Answer:} Using the proposed stress tensor, and expanding equation (c), we get
+\begin{equation}
+\begin{split}
+& \derp{\sigmarr}{r} + \frac{2\sigmarr - \sigmatt - \sigmaff}{r} = 0 \\
+& 0 = 0 \\
+& 0 = 0
+\end{split}
+\end{equation}
+We now check if $\sigmauu$ ca fulfill the static admissibility equations.
+\begin{equation}
+\derp{\sigmarr}{r} + \frac{2\sigmarr - \sigmatt - \sigmaff}{r} = \frac{3AB}{r^4} - \frac{3AB}{r^4} = 0 \rightarrow \text{(c) is OK. Interior equilibrium is satisfied.}
+\end{equation}
+\begin{equation}
+\text{(a)} \rightarrow - A\left[
+\frac{B}{R_e^3} - 1 \right] = 0 \rightarrow B = R_e^3
+\end{equation}
+
+\begin{equation}
+\text{(b)} \rightarrow - A\left[
+\frac{R_i^3}{R_e^3} - 1 \right] = p_0 \rightarrow A = p_0 \frac{R_e^3}{R_i^3 - R_e^3}
+\end{equation}\\
+
+All the other conditions concerning $\sigmatr$ and $\sigmarf$ are automatically satisfied due to the chosen stress tensor. Thus, a statically admissible stress field is:
+\begin{equation}
+\sigmauu = \left[
+\begin{matrix}
+p_0 \frac{R_e^3}{R_i^3 - R_e^3} \left[
+\frac{R_i^3}{r} - 1 \right] & 0 & 0 \\
+0 & -p_0 \frac{R_e^3}{R_e^3 - R_i^3} \left[
+\frac{R_e^3}{2r^3} + 1 \right] & 0 \\
+0 & 0 & -p_0 \frac{R_e^3}{R_e^3 - R_i^3} \left[
+\frac{R_e^3}{2r^3} + 1 \right]
+\end{matrix}
+\right]
+\end{equation} \\
+
+
+
+\noindent \textbf{Question 4}: Please calculate the strain tensor $\epsuu$? Does it satisfy the compatibility equation? Conclusion?
+
+\textbf{Answer:} Based on the constitutive equation, we can calculate the strains:
+\begin{equation}
+\epsuu = \frac{1+\nu}{E} \sigmauu - \frac{\nu}{E} \text{tr} \sigmauu \underline{\underline{1}}
+\end{equation}
+\begin{equation}
+\text{tr}\sigmauu = -p_0 \frac{R_e^3}{R_e^3 - R_i^3}
+\end{equation}
+Thus, we get $\epsrt = \epstf = \epsft = 0$. Let us note that 
+\begin{equation}
+A_1 = p_0 \frac{R_e^3}{R_e^3 - R_i^3}
+\end{equation}
+
+We get:
+\begin{equation}
+\epsuu =  \left[
+\begin{matrix}
+\left(\frac{1+\nu}{E}\right) A_1 \left[
+\frac{R_e^3}{r} - 1 \right] + \frac{\nu}{E} A_1 & 0 & 0 \\
+0 & -\left(\frac{1+\nu}{E}\right) A_1 \left[
+\frac{R_e^3}{2r^3} + 1 \right] + \frac{\nu}{E} A_1 & 0 \\
+0 & 0 & -\left(\frac{1+\nu}{E}\right) A_1 \left[
+\frac{R_e^3}{2r^3} + 1 \right] + \frac{\nu}{E} A_1
+\end{matrix}
+\right]
+\end{equation} \\
+
+In case of complete spherical symmetry, the compatibility equation can be simplified (see Textbook equation 2.14b):
+\begin{equation}
+\frac{d\epsff}{dr} + \frac{\epsff- \epsrr}{r} = 0
+\end{equation}
+Let us verify if this equation is satisfied by $\epsuu$.
+\begin{equation}
+\frac{d\epsff}{dr} = 3A_1 \left(\frac{1+\nu}{E}\right) \frac{R_e^3}{2r^4}
+\end{equation}
+\begin{equation}
+\frac{\epsff - \epsrr}{r} = -3A_1 \left(\frac{1+\nu}{E}\right) \frac{R_e^3}{2r^4}
+\end{equation} \\
+
+The two equations above satisfied the compatibility equation. Thus it will be possible to integrate $\epsuu$ to determine a displacement field $\underline{u}$. Considering there is no additional kinematic condition (no kinematic boundary condition), we got the exact solution of the problem.
+

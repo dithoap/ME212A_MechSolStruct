@@ -1,0 +1,141 @@
+\noindent \textbf{Question 1}: Write the complete problem: kinematic + static + constitutive equation! \\
+
+\textbf{Answer:} Kinematic admissibility:
+
+\begin{equation}
+\underline{u} \cdot \underline{n} = 0 \quad \forall \Mu \in S_{Lat} \rightarrow u_r = 0 \quad \forall \Mu \in S_{Lat} 
+\end{equation}
+\begin{equation}
+\underline{n} \cdot \underline{u}  = -U \quad \forall \Mu \in S_{z}^+ \rightarrow u_z = -U \quad \forall \Mu \in S_{z}^+ 
+\end{equation}
+\begin{equation}
+\epsuu (\underline{u}) = \frac{1}{2} ({\Graduu \uu + \Graduu^T \uu }) \quad \forall \Mu \in \Omega
+\end{equation}
+\begin{equation}
+\underline{u} \cdot \underline{n} = 0 \quad \forall \Mu \in S_{z}^- \rightarrow u_z = 0 \quad \forall \Mu \in S_{z}^- 
+\end{equation} \\
+
+Static admissibility:
+\begin{equation}
+\divu \sigmauu = \underline{0} \quad \forall \Mu \in \Omega 
+\end{equation}
+or in expanded form as below
+\begin{equation}
+\begin{split}
+& \sigmarr ,_r + \frac{1}{r} (\sigmart,_\theta + \sigmarr - \sigmatt) + \sigmarz,_z = 0 \\
+& \sigmatr ,_r + \frac{1}{r} (\sigmatt,_\theta + \sigmart + \sigmatr) + \sigmatz,_z = 0 \\
+& \sigmazr ,_r + \frac{1}{r} (\sigmazt,_\theta + \sigmazr ) + \sigmazz,_z = 0
+\end{split} \quad \quad  \rightarrow \quad \quad \forall \Mu \in \Omega 
+\end{equation}
+
+Contact without friction:
+\begin{equation}
+(\sigmauu \cdot \tu)\cdot \tu = 0 \quad \forall \Mu \in S_z^+ \rightarrow \sigmarz = \sigmatz = 0 \quad \Mu \in S_z^+
+\label{eq:szplus}
+\end{equation}
+
+Contact without friction:
+\begin{equation}
+(\sigmauu \cdot \tu)\cdot \tu = 0 \quad \forall \Mu \in S_z^- \rightarrow \sigmarz = \sigmatz = 0 \quad \Mu \in S_z^-
+\label{eq:szmin}
+\end{equation}
+
+Contact without friction:
+\begin{equation}
+(\sigmauu \cdot \tu)\cdot \tu = 0 \quad \forall \Mu \in S_{Lat} \rightarrow \sigmatr = \sigmatz = 0 \quad \Mu \in S_{Lat}
+\label{eq:slat}
+\end{equation}
+
+Constitutive equations:
+\begin{equation}
+\sigmauu = \lambda \text{tr} \epsuu \underline{\underline{1}} + 2 \mu \epsuu \quad \forall \Mu \in \Omega
+\end{equation}
+
+
+
+\noindent \textbf{Question 2}: Assume that $\uu = - \frac{U}{h} z \eu_z $. Is this kinematically admissible? \\
+
+\textbf{Answer:} We assume that
+\begin{equation}
+\uu = \left(
+\begin{matrix}
+0 \\ 0 \\ -\frac{U}{h}z
+\end{matrix}
+\right) = \left(
+-\frac{U}{h}z
+\right) \quad \text{Of course } \uu \text{ is kinematically admissible.}
+\end{equation}
+By definition (using the gradient of a vector with cylindrical coordinates):
+\begin{equation}
+\Graduu \cdot \uu = \left[
+\begin{matrix}
+0 &0 &0 \\
+0 &0 &0 \\
+0 &0 &-\frac{U}{h} \\
+\end{matrix}
+\right] \rightarrow \epsuu = \left[
+\begin{matrix}
+0 &0 &0 \\
+0 &0 &0 \\
+0 &0 & \epszz \\
+\end{matrix}
+\right]
+\end{equation}
+with $\epszz = -U/h \rightarrow $ the compatibility equation is obviously satisfied. \\
+
+\noindent \textbf{Question 3}: Find the corresponding stress $\sigmauu$. Is it statistically admissible? \\
+
+\textbf{Answer:} 
+\begin{equation}
+\sigmauu = \lambda \text{tr} \epsuu \underline{\underline{1}} + 2 \mu \epsuu \rightarrow \sigmauu = \left[
+\begin{matrix}
+-\lambda \frac{U}{h} &0 &0 \\
+0 &-\lambda \frac{U}{h} &0 \\
+0 &0 & -(\lambda+2\mu) \frac{U}{h} \\
+\end{matrix}
+\right]
+\end{equation} 
+Eqs. \ref{eq:slat}, \ref{eq:szmin}, and \ref{eq:szplus} are obviously satisfied.
+$\divu \sigmauu \rightarrow$ obviously equal to 0 as $\sigmauu $ is constant. \\
+
+\noindent \textbf{Question 4}: Find oedometric  modulus $\hat{E}$ as a  function of $E$ and $\nu$.
+
+\textbf{Answer:} The vertical force is equal to 
+\begin{equation}
+\Pu = \int_{S_z^+} \sigmauu \cdot \eu_z dS_3^+
+\end{equation}
+\begin{equation}
+\Pu = \int_{S_z^+} - (\lambda + 2\mu)\frac{U}{h} dS_3^+ \eu_z = -\Pu \eu_z \quad \text{with} \quad \Pu = \frac{(\lambda+2\mu)US}{h} 
+\end{equation}
+So we can identify the oedometric modulus $\hat{E} = \lambda + 2\mu$.
+
+\begin{equation}
+\begin{split}
+ \sigmauu &= \lambda \text{tr} \epsuu \underline{\underline{1}} + 2 \mu \epsuu \\
+ \epsuu &= \frac{1+\nu}{E} \sigmauu - \frac{\nu}{E} \text{tr} \sigmauu \underline{\underline{1}}
+\end{split} \quad \rightarrow \quad  
+\begin{split}
+\text{tr} \sigmauu &= (3\lambda + 2\mu) \text{  tr} \epsuu \\
+\text{tr} \epsuu &= (\frac{1-2\nu}{E}) \text{  tr} \sigmauu \\
+\end{split} \quad \rightarrow \quad 3\lambda + 2\mu = \frac{E}{1-2\nu}
+\end{equation}
+
+Or we can also write as follows:
+\begin{equation}
+\text{tr} \sigmauu = (3\lambda + 2\mu) \text{tr} \epsuu \quad \rightarrow \quad \sigmauu = \frac{\lambda}{3\lambda + 2\mu} \text{tr} \sigmauu \underline{\underline{1}} + 2\mu \epsuu
+\end{equation}
+\begin{equation}
+\epsuu = \frac{1}{2\mu} \sigmauu - \frac{\lambda}{2\mu (3\lambda + 2\mu)} \text{tr} \sigmauu \underline{\underline{1}}
+\end{equation}
+
+By identification, 
+\begin{equation}
+\frac{1}{2\mu} = \frac{1+\nu}{E} \quad  \text{     and     } \quad \frac{\lambda}{2\mu (3\lambda + 2\mu)} = \frac{\nu}{E}  
+\end{equation}
+\begin{equation}
+\rightarrow \lambda = \frac{E \nu}{(1+\nu)(1-2\nu)} \quad  \text{     and     } \quad \mu = \frac{E}{2(1+\nu)}
+\end{equation}
+Thus, 
+\begin{equation}
+\hat{E} = \lambda + 2\mu = \frac{2 E\nu + 2E(1-2\nu)}{2(1+\nu)(1-2\nu)} = \frac{E(1-\nu)}{(1+\nu)(1-2\nu)}
+\end{equation}
