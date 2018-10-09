@@ -1,0 +1,116 @@
+\documentclass[letter,12pt]{article}
+
+
+\usepackage[english]{babel}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{textcomp}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{16.1 cm}
+\setlength{\topmargin}{-15mm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0cm}
+
+\input{newcommands}
+\newcommand{\sv}{\underline}
+\newcommand{\Sig}{\boldsymbol{\sigma}}
+\newcommand{\K}{\boldsymbol{K}}
+\newcommand{\Eps}{\boldsymbol{\varepsilon}}
+\newcommand{\intener}{\mathcal{E}}
+
+
+% --------------------------------------------------------------------------------------
+% - definition des notations
+% --------------------------------------------------------------------------------------
+
+
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\title{\textbf{Practice: \\ Static and Kinematic Admissibility}}
+\date{}
+
+\maketitle
+
+\vspace{-1cm}
+
+
+\section{Problem 1 }
+A homogeneous continuum as in Fig. 1 is clamped on surface $S_3^-(z = 0)$  and submitted to a uniform pressure $p_0$ over the surface $S_1^+(x=l_1)$. \\
+
+\noindent \textbf{Question 1}: Write the static admissibility equations! \\
+
+\noindent \textbf{Question 2}: Write the kinematic admissibility equations! \\
+
+\noindent \textbf{Question 3}: Assuming we use the Cartesian coordinate system, please give the expansion of these equations! \\
+
+\noindent \textbf{Question 4}: Calculate $\int_{S_3^-} \sigmauu \cdot \underline{n} dS$ \\
+
+\section{Problem 2}
+Let us consider a sphere with cavity (exterior radius $R_e$ and internal radius $R_i$). The external surface $S_e$ is free of loading and the interior surface $S_i$ is submitted to a pressure $p_0$. The material is assumed to be isotropic linear elastic with young modulus $E$ and Poisson ratio $\nu$. \\
+
+\noindent \textbf{Question 1}: Write the static admissibility equations! \\
+
+\noindent \textbf{Question 2}: Please expand this equation using spherical polar coordinates system! \\
+
+\noindent \textbf{Question 3}: Let's assume that the following stress tensor 
+
+\begin{equation}
+\sigmauu = \left[ \begin{matrix}
+\sigmarr &0 &0 \\
+0 & \sigmatt & 0 \\
+0 & 0 & \sigmaff
+\end{matrix} \right]
+\end{equation}
+with 
+\begin{equation}
+\sigmarr = -A\left[\frac{B}{r^3} - 1 \right]
+\end{equation}
+and 
+\begin{equation}
+\sigmatt = \sigmaff = A \left[\frac{B}{2r^3} + 1 \right]
+\end{equation}
+ Please calculate the coefficient $A$ and $B$ so that $\sigmauu$ could be a solution of the problem! \\
+
+\noindent \textbf{Question 4}: Please calculate the strain tensor $\epsuu$? Does it satisfy the compatibility equation? Conclusion?
+
+\section{Problem 3}
+Let us consider a domain $\Omega$, simply supported by a rigid basis ($\Gamma$). $\Omega$ is submitted to gravity volume forces $\fu = \rho g \underline{y} $ and to uniform pressure $p > 0$ over every particle size vs Om plane stress in the plane of X Y and the material is isotropic linear elastic with young modulus and possum ratio no \\
+
+\noindent \textbf{Question 1}: Write down the full problem kinematic and static and boundary condition equations for certificates \\
+
+\noindent \textbf{Question 2}: reassure on arief functions by = 8 x square + c square + 8 y cube find a c h so we define a statistically admissible stressful \\
+
+\noindent \textbf{Question 3}: find the relative strength using the constitutive equation that satisfy the compatibility equation please complete and \\
+
+\noindent \textbf{Question 4}: integrate this trend fuel to get the displacement at every point can we find the exact solution of the problem using this error function
+
+\section{Problem 4}
+Let us consider a classical test in material engineering that make possible to identify the oedometric Euler Matric model is a cylindrical of domain Omega is compressed due to the prescribed motion of the top surface You = - you Epsilon Z all surfaces are assumed to be perfect contact without friction note that P = - be easy and the resulting for that is necessary to press the materials with young modulus and person Russian you \\
+
+\noindent \textbf{Question 1}: Write the complete problem: kinematic + static + constitutive equation! \\
+
+\noindent \textbf{Question 2}: Assume that $\uu = - \frac{U}{h} z \eu_z $. Is this kinematically admissible? \\
+
+\noindent \textbf{Question 3}: Find the corresponding stress $\sigmauu$. Is it statistically admissible? \\
+
+\noindent \textbf{Question 4}: Find oedometric  modulus $\hat{E}$ as a  function of $E$ and $\nu$.
+
+
+
+
+\end{document}
