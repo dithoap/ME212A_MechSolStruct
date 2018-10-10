@@ -1,7 +1,188 @@
 \noindent \textbf{Question 1}: Write down the full problem! (kinematic, static and constitutive equations) \\
 
+\textbf{Answer:} 
+\textbf{Kinematic admissibility:}\\
+Let us not $\uu$ the displacement vector such that $\uu=\left(\begin{matrix}
+u \\ v
+\end{matrix} \right) $, $\uu=u\xu+v \underline{y}$\\
+$\left\lbrace \begin{matrix}
+v=0, \quad \forall M \in S_y^+ \\
+\underline{\underline{\epsilon}}=\frac{1}{2}\left( \underline{\underline{\nabla}}\uu + \underline{\underline{\nabla}}\uu^t\right), \quad \text{compatibility}
+\end{matrix}\right.$
+\\
+\textbf{Static admissibility:}
+Find $\sigmauu $ symmetric such that
+\begin{equation}
+\left. \begin{split}
+& \text{(1)  } \sigmauu \cdot \underline{n} = -p\underline{n} \quad \forall \text{ } M \in S_x^+ \quad \\
+& \text{(2)  } \sigmauu \cdot \underline{n} = -p\underline{n} \quad \forall \text{ } M \in S_x^- \quad \\
+& \text{(3)  } \sigmauu \cdot \underline{n} = \underline{0} \quad \forall \text{ } M \in S_y^- \quad \\
+& \text{(4)  } \left( \sigmauu \cdot \underline{n}\right) \cdot \tu = \underline{0} \quad \forall \text{ } M \in S_y^+ \quad \\
+\end{split} \right\rbrace \text{Boundary equation}
+\end{equation}
+\begin{equation}
+\begin{split}
+&  \divu \sigmauu + \rho g\underline{y}= \underline{0} \quad \forall \text{ } M \in \Omega \quad \text{Internal equilibrium}
+\end{split}
+\end{equation}
+As plane stress are assumed, the equation can be reduced to:
+\begin{equation}
+\left. \begin{split}
+&  \sigma_{xx,x} + \sigma_{xy,y} = 0\\
+&  \sigma_{xy,x} + \sigma_{yy,y} + \rho g = 0\\
+&  \sigma_{xz} = \sigma_{yz} = \sigma_{zz} = 0\\
+\end{split}\right\rbrace \forall \text{ } M \in \Omega
+\end{equation}
+\textbf{Constitutive equation:}
+The 3D constitutive equation is:
+\begin{equation}
+\underline{\underline{\epsilon}} = \frac{1+\nu}{E} \sigmauu - \frac{\nu}{E}\text{tr}\sigmauu \underline{\underline{1}}
+\end{equation}
+Here, we can use the plane stress assumption ($\sigma_{xz} = \sigma_{yz} = \sigma_{zz} = 0$)
+\begin{equation}
+\left[ \begin{matrix}
+\epsilon_{xx} & \epsilon_{xy} & \epsilon_{xz} \\
+\epsilon_{xy} & \epsilon_{yy} & \epsilon_{yz} \\
+\epsilon_{xz} & \epsilon_{yz} & \epsilon_{zz}
+\end{matrix}\right] =\left( \frac{1+\nu}{E}\right) \left[ \begin{matrix}
+\sigma_{xx} & \sigma_{xy} & 0 \\
+\sigma_{xy} & \sigma_{yy} & 0 \\
+0 & 0 & 0
+\end{matrix}\right] - \frac{\nu}{E}\left( \sigma_{xx}+\sigma_{yy} \right) \left[ \begin{matrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0
+\end{matrix}\right]
+\end{equation}
+As a consequence, we can also write this equation in 2D:
+\begin{equation}
+\left\lbrace \begin{split}
+& \underline{\underline{\epsilon}}^{2D} = \frac{1+\nu}{E} \sigmauu^{2D} - \frac{\nu}{E} \text{tr} \sigmauu^{2D} \underline{\underline{1}}^{2D} \\
+&  \epsilon_{xz} = \epsilon_{yz} = 0 \\
+&  \epsilon_{zz} = -\frac{\nu}{E} (\sigma_{xx}+\sigma_{yy}) \quad \text{the out of plane strain is not equal to zero}\\
+\end{split} \right. 
+\end{equation}
+
 \noindent \textbf{Question 2}: We assume an Airy function $\phi(x,y) = ax^2 + cy^2 + h y^3$. Find $a$, $c$, $h$ so we define a statistically admissible stress field. \\
+
+\textbf{Answer:} We want to use an approach based on Airy function but we have to be careful in case of volume force.\\
+Let us assume the volume force density $\underline{\text{f}}$ derive from a potential:
+\begin{equation}
+\underline{\text{f}}=\underline{\text{grad}}V
+\end{equation}
+For example here: $V = \rho gy \Rightarrow \underline{\text{f}} = \underline{\text{grad}}V = \left( \begin{matrix}
+0\\\rho g
+\end{matrix} \right) $\\
+In this case:
+\begin{equation} \left\lbrace
+\begin{split}
+& \frac{\partial(\sigma_{xx}+V)}{\partial x} + \frac{\partial \sigma_{xy}}{\partial y} = 0 \\
+& \frac{\partial \sigma_{xy}}{\partial x} + \frac{\partial(\sigma_{yy}+V)}{\partial y} = 0 \\
+\end{split} \right.
+\end{equation}
+and $\sigma_{xx}, \sigma_{xy}, \sigma_{yy}$ can be defined based on the Airy function by the following equation:
+\begin{equation}
+\sigma_{xx} + V = \frac{\partial^2 \phi}{\partial y^2}; \quad \sigma_{yy} + V = \frac{\partial^2 \phi}{\partial x^2}; \quad \sigma_{xy} = -\frac{\partial^2 \phi}{\partial x \partial y}
+\end{equation}
+If $\phi (x,y) = ax^2+cy^2+hy^3 $
+\begin{equation}
+\begin{split}
+& \sigma_{xx} = \frac{\partial^2 \phi}{\partial y^2} - V = 2C+6hy- \rho gy \rightarrow \sigma_{xx,x} = 0 \\
+& \sigma_{yy} = \frac{\partial^2 \phi}{\partial x^2} - V = 2a - \rho gy \rightarrow \sigma_{yy,y}=-\rho g\\
+& \sigma_{xy} = -\frac{\partial^2 \phi}{\partial x \partial y} = 0
+\end{split}
+\end{equation}
+\begin{equation}
+\text{Interior equation:} \left\lbrace \begin{split}
+& \sigma_{xx,x} + \sigma_{xy,y} = 0 \rightarrow \text{OK}\\
+& \sigma_{xy,x} + \sigma_{yy,y} + \rho g = 0 \rightarrow \text{OK}\\
+\end{split} \right.
+\end{equation}
+Boundary static equation:
+\begin{equation}
+\begin{split}
+& (1) \Rightarrow \left\lbrace \begin{split} & \sigma_{xx}(x=B/2, y) = -p, \quad \forall y \rightarrow \left\lbrace \begin{split}
+& 2c=-p\\
+& 6h-\rho g=0\\
+\end{split} \right. \rightarrow \left\lbrace \begin{split}
+& c=-p/2\\
+& h = \frac{\rho g}{6}\\
+\end{split} \right.\\  
+& \sigma_{xy}(x=B/2,y)=0, \quad \forall y \quad \text{OK}
+\end{split} \right.\\
+& (2) \Rightarrow \left\lbrace \begin{split}
+& \sigma_{xx}(x=-B/2,y)=-p, \quad \forall y \quad \text{OK} \\
+& \sigma_{xy}(x=-B/2,y)=0, \quad \forall y \quad \text{OK} \\
+\end{split} \right. \\ 
+& (3) \Rightarrow \left\lbrace \begin{split}
+& \sigma_{yy}(y=0,x)=0, \quad \forall x \rightarrow 2a = 0 \rightarrow a = 0 \\
+& \sigma_{xy}(y=0,x)=0, \quad \forall x \quad \text{OK} \\
+\end{split} \right. \\ 
+& (4) \Rightarrow \left\lbrace \begin{split}
+& \sigma_{xy}(y=L,x)=0, \quad \forall x \quad \text{OK} \\
+\end{split} \right. \\ 
+\end{split}
+\end{equation}
+Finally, we have $a=0; c=-p/2; h=\rho g/6$, and we get the following statistically admissible stress field:
+\begin{equation}
+\left\lbrace
+\begin{split}
+& \sigma_{xx}=-p \\
+& \sigma_{yy}=-\rho gy \\
+& \sigma_{xy}=0 \\
+& \sigma_{xz}=\sigma_{yz}=\sigma_{zz}=0 \\
+\end{split}
+\right.
+\end{equation}
+\\
 
 \noindent \textbf{Question 3}: Find the related strain field using the constitutive equation. Does that satisfy the compatibility equation? Conclusion? \\
 
-\noindent \textbf{Question 4}: Integrate the strain field to get the displacement at every point. Can we find the exact solution of the problem using this Airy function?
+\textbf{Answer:}
+As a consequence, using the constitutive equation:
+\begin{equation}
+\left\lbrace
+\begin{split}
+& \epsilon_{xx}=\frac{1}{E}\sigma_{xx} - \frac{\nu}{E}\sigma_{yy} = -\frac{p}{E}+\frac{\nu \rho g}{E} y \\
+& \epsilon_{yy}=-\frac{\rho g}{E} y + \frac{\nu p}{E} \\
+& \epsilon_{xy}=\epsilon_{xz}=\epsilon_{yz}=0 \\
+& \epsilon_{zz}=\frac{\nu}{E} \left( p+\rho gy \right)  \\
+\end{split}
+\right.
+\end{equation}
+Check the compatibility:\\
+The compatibility equation are obviously satisfied as we just have linear relations (and the compatibility equations involves the second derivation).
+\\
+
+\noindent \textbf{Question 4}: Integrate the strain field to get the displacement at every point. Can we find the exact solution of the problem using this Airy function?\\
+
+\textbf{Answer:}
+\begin{equation}
+\begin{split}
+& u_{,x}=-\frac{p}{E}+\frac{\nu \rho g}{E}y \rightarrow u=\left( -\frac{p}{E}+\frac{\nu \rho g}{E}y \right) x +f(y) \\
+& v_{,y}=-\frac{\rho g}{E}y+\frac{\nu p}{E} \rightarrow v= -\frac{\rho g}{2E}y^2+\frac{\nu p}{E}y +g(x) \\
+& \epsilon_{xy} = \frac{1}{2} (u_{,y}+v_{,x}) = 0 \rightarrow 
+\frac{\nu \rho g}{E}x + \frac{\partial f(y)}{y} + \frac{\partial g(x)}{x}=0 \\
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+& \frac{\partial f(y)}{y}=\lambda \rightarrow f(y)=\lambda y+\beta \\
+& \frac{\nu \rho g}{E}x + \frac{\partial g(x)}{x} = -\lambda \rightarrow g(x)=-\frac{\nu \rho g}{2E}x^2-\lambda x + \gamma \\
+\end{split}
+\end{equation}
+Thus:
+\begin{equation}
+\left\lbrace
+\begin{split}
+& u=\left( -\frac{p}{E}+\frac{\nu \rho g}{E}y \right) x + \lambda y+\beta \\
+& v= -\frac{\rho g}{2E}y^2+\frac{\nu p}{E}y -\frac{\nu \rho +  g}{2E}x^2-\lambda x + \gamma \\
+\end{split}
+\right.
+\end{equation}
+Introducing the kinematic boundary equations:
+\begin{equation}
+v(x,y=L) \Rightarrow \text{this solution can not be satisfied}
+\end{equation}
+We do not have the exact solution.
