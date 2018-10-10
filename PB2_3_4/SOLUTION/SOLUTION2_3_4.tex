@@ -15,6 +15,12 @@
 \usepackage{bbold}
 \usepackage{textcomp}
 
+\usepackage{subcaption}
+\usepackage{booktabs, array, dcolumn}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcolumntype{d}{D{.}{.}{2.3}}
+\newcolumntype{C}{p}
+
 
 \setlength{\oddsidemargin}{0in}
 \setlength{\evensidemargin}{0in}
@@ -73,6 +79,23 @@ Let us consider a domain $\Omega$, simply supported by a rigid basis ($\Gamma$).
 \newpage
 \section*{Problem 4}
 Let us consider a classical test in material engineering that make possible to identify the oedometric  modelus $\hat{E}$. A cylinder material domain $\Omega$ is compressed due to the prescribed motion of the top surface $\underline{u} = -U \eu_z $. All surfaces are assumed to be perfect contact without friction. Note that $\Pu = -P \eu_z$ the resulting force that is necessary to press the materials (Young modulus $E$ and Poisson ratio $\nu$. \\
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{.35\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{figures/problem4_isometric}
+		\caption{3D isometric view}
+	\end{subfigure}
+	\hspace{10mm}
+	\begin{subfigure}{.45\textwidth}
+		\hspace{0.5cm}
+		\includegraphics[width=1\linewidth]{figures/problem4_2d}
+		\caption{cross-sectional view}
+	\end{subfigure}	
+	\caption{Oedometric compression}
+	\label{fig:problem4}
+\end{figure}
 
 \input{solution4.tex}
 
